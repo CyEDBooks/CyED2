@@ -65,4 +65,4 @@ d) $\{a,c,e,g\},\ \{b,d\},\ \{f\}$
 
 ---
 
-*Material adaptado del material original de los profesores Oscar Bedoya, Juan Francisco Díaz, Angela Villota y Jenifer Viafara.*
+*Material adaptado del material original de los profesores Angela Villota, Jenifer Viafara, Oscar Bedoya y Juan Francisco Díaz.*

@@ -318,4 +318,4 @@ Note que $p = 2$ y por lo tanto el grado de la relación $J_2(R,S)$ es $5$.
 
 ---
 
-*Material adaptado del material original de los profesores Oscar Bedoya, Juan Francisco Díaz, Angela Villota y Jenifer Viafara.*
+*Material adaptado del material original de los profesores Angela Villota, Jenifer Viafara, Oscar Bedoya y Juan Francisco Díaz.*

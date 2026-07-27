@@ -381,4 +381,4 @@ En general, se puede representar un orden parcial en un conjunto finito utilizan
 
 ---
 
-*Material adaptado del material original de los profesores Oscar Bedoya, Juan Francisco Díaz, Angela Villota y Jenifer Viafara.*
+*Material adaptado del material original de los profesores Angela Villota, Jenifer Viafara, Oscar Bedoya y Juan Francisco Díaz.*
