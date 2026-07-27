@@ -14,3 +14,6 @@ _build
 .env
 .env.local
 .DS_Store
+
+# Diapositivas secundarias en PDF (material de trabajo temporal, no se publica)
+slidestmp/

@@ -5,88 +5,72 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  id: c76d1b0d-663b-4106-8bc4-c7926e2040b4
-  title: Computación y Estructuras Discretas I
-  description: "Material interactivo y reproducible para el curso Computación y Estructuras Discretas I de la Universidad Icesi."
+  id: 8162469a-5641-4758-9598-a9fe5f5fc4e0
+  title: Computación y Estructuras Discretas II
+  description: "Material interactivo y reproducible para el curso Computación y Estructuras Discretas II de la Universidad Icesi."
   keywords:
     - computacion
     - estructuras discretas
-    - logica formal
-    - demostraciones
-    - conjuntos
-    - funciones
-    - grafos
-    - java
+    - relaciones
+    - conjuntos parcialmente ordenados
+    - recursividad
+    - induccion matematica
+    - teoria de numeros
+    - programacion funcional
+    - scala
   authors:
     - name: Angela Villota
       affiliation: Universidad Icesi
       email: apvillota@icesi.edu.co
+    - name: Jenifer Viafara
+      affiliation: Universidad Icesi
+      email: jenifer.viafara@u.icesi.edu.co
+    - name: Aníbal Sosa
+      affiliation: Universidad Icesi
+      email: uasosa@icesi.edu.co
     - name: Juan Marcos Caicedo Mejía
       affiliation: Universidad Icesi
       email: jmcaicedo@icesi.edu.co
-    - name: Marlon Gomez Victoria
+    - name: Carlos Delgado
       affiliation: Universidad Icesi
-      email: marlon.gomez1@u.icesi.edu.co
-    - name: Andrés Aristizabal
-      affiliation: Universidad Icesi
-      email: aaaristizabal@icesi.edu.co
+      email: carlos.delgado4@u.icesi.edu.co
   toc:
     - file: README.md
       title: Course home
-    - title: "Unidad 1: Métodos de demostración"
+    - title: "Unidad 1: Relaciones de equivalencia y conjuntos parcialmente ordenados"
       children:
-        - file: Unidad1-TecnicasDemostracion/index.md
-          title: Estudio
-        - file: Unidad1-TecnicasDemostracion/exercises.md
-          title: Ejercicios
-    - title: "Unidad 2: Conjuntos y funciones"
-      children:
-        - file: Unidad2-ConjuntosFunciones/Conjuntos/index.md
-          title: "Conjuntos: Estudio"
-        - file: Unidad2-ConjuntosFunciones/Conjuntos/exercises.md
-          title: "Conjuntos: Ejercicios"
-        - file: Unidad2-ConjuntosFunciones/RelacionesFunciones/index.md
-          title: "Relaciones y Funciones: Estudio"
-        - file: Unidad2-ConjuntosFunciones/RelacionesFunciones/exercises.md
-          title: "Relaciones y Funciones: Ejercicios"
-    - title: "Unidad 3: Estructuras discretas no recursivas y análisis de algoritmos"
-      children:
-        - file: Unidad3-EstructurasNoRecursivas/CrecimientoFuncionesAnalisisAlgoritmos/index.md
-          title: "Crecimiento de funciones y Análisis de algoritmos: Estudio"
-        - file: Unidad3-EstructurasNoRecursivas/CrecimientoFuncionesAnalisisAlgoritmos/exercises.md
-          title: "Crecimiento de funciones y Análisis de algoritmos: Ejercicios"
-        - file: Unidad3-EstructurasNoRecursivas/PilasYColas/index.md
-          title: "Pilas y Colas: Estudio"
-        - file: Unidad3-EstructurasNoRecursivas/PilasYColas/exercises.md
-          title: "Pilas y Colas: Ejercicios"
-        - file: Unidad3-EstructurasNoRecursivas/TablasHash/index.md
-          title: "Tablas Hash: Estudio"
-        - file: Unidad3-EstructurasNoRecursivas/TablasHash/exercises.md
-          title: "Tablas Hash: Ejercicios"
-        - file: Unidad3-EstructurasNoRecursivas/ColaPrioridad/index.md
-          title: "Cola de prioridad: Estudio"
-        - file: Unidad3-EstructurasNoRecursivas/ColaPrioridad/exercises.md
-          title: "Cola de prioridad: Ejercicios"
-        - file: Unidad3-EstructurasNoRecursivas/Generics/index.md
-          title: "Generics: Estudio"
-        - file: Unidad3-EstructurasNoRecursivas/Generics/exercises.md
-          title: "Generics: Ejercicios"
-        - file: Unidad3-EstructurasNoRecursivas/TAD/index.md
-          title: "TAD: Estudio"
-        - file: Unidad3-EstructurasNoRecursivas/TAD/exercises.md
-          title: "TAD: Ejercicios"
-        - file: Unidad3-EstructurasNoRecursivas/ComplejidadEspacial/index.md
-          title: "Complejidad espacial: Estudio"
-        - file: Unidad3-EstructurasNoRecursivas/ComplejidadEspacial/exercises.md
-          title: "Complejidad espacial: Ejercicios"
-  github: https://github.com/CyEDBooks/CyED1
+        - title: "Sesión 1: Relaciones"
+          children:
+            - file: Unidad1-RelacionesOrdenParcial/Sesion1-Relaciones/index.md
+              title: Estudio
+            - file: Unidad1-RelacionesOrdenParcial/Sesion1-Relaciones/exercises.md
+              title: Ejercicios
+        - title: "Sesión 2: Recursividad"
+          children:
+            - file: Unidad1-RelacionesOrdenParcial/Sesion2-Recursividad/index.md
+              title: Estudio
+            - file: Unidad1-RelacionesOrdenParcial/Sesion2-Recursividad/exercises.md
+              title: Ejercicios
+        - title: "Sesión 3: Equivalencia y orden parcial"
+          children:
+            - file: Unidad1-RelacionesOrdenParcial/Sesion3-EquivalenciaOrdenParcial/index.md
+              title: Estudio
+            - file: Unidad1-RelacionesOrdenParcial/Sesion3-EquivalenciaOrdenParcial/exercises.md
+              title: Ejercicios
+        - title: "Sesión 4: Taller de funciones recursivas"
+          children:
+            - file: Unidad1-RelacionesOrdenParcial/Sesion4-TallerFuncionesRecursivas/index.md
+              title: Estudio
+            - file: Unidad1-RelacionesOrdenParcial/Sesion4-TallerFuncionesRecursivas/exercises.md
+              title: Ejercicios
+  github: https://github.com/CyEDBooks/CyED2
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
 site:
   template: book-theme
   options:
     logo: _static/icesi-logo.svg
     logo_dark: _static/icesi-logo-dark.svg
-    logo_text: Computación y Estructuras Discretas I
+    logo_text: Computación y Estructuras Discretas II
     logo_url: https://www.icesi.edu.co/
     logo_alt: Universidad Icesi
     style: _static/icesi.css
