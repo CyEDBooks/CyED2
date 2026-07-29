@@ -175,6 +175,10 @@ R_1=\{(1,1),(2,2),(3,3)\}
 R_2=\{(1,1),(1,2),(1,3),(1,4)\}
 $$
 
+Calcule $R_1 \cup R_2$, $R_1 \cap R_2$, $R_1 - R_2$ y $R_2 - R_1$.
+
+:::{admonition} Solución
+:class: dropdown
 $$
 \begin{aligned}
 R_1 \cup R_2 &= \{(1,1),(1,2),(1,3),(1,4),(2,2),(3,3)\} \\
@@ -183,6 +187,7 @@ R_1 - R_2 &= \{(2,2),(3,3)\} \\
 R_2 - R_1 &= \{(1,2),(1,3),(1,4)\}
 \end{aligned}
 $$
+:::
 
 ### Composición de relaciones
 
@@ -198,11 +203,14 @@ Determinar la composición de dos relaciones requiere hallar elementos que sean 
 
 **Ejemplo.** ¿Cuál es la composición de las relaciones $R$ y $S$, donde $R$ es la relación de $\{1,2,3\}$ en $\{1,2,3,4\}$ con $R=\{(1,1),(1,4),(2,3),(3,1),(3,4)\}$ y $S$ es la relación de $\{1,2,3,4\}$ en $\{0,1,2\}$ con $S=\{(1,0),(2,0),(3,1),(3,2),(4,1)\}$?
 
-**Solución.** $S \circ R$ se construye usando los pares ordenados de $R$ y de $S$ tales que el segundo elemento de $R$ coincide con el primero de $S$. Por ejemplo, $(2,3)\in R$ y $(3,1)\in S$ producen $(2,1)$. Calculando todos los casos:
+:::{admonition} Solución
+:class: dropdown
+$S \circ R$ se construye usando los pares ordenados de $R$ y de $S$ tales que el segundo elemento de $R$ coincide con el primero de $S$. Por ejemplo, $(2,3)\in R$ y $(3,1)\in S$ producen $(2,1)$. Calculando todos los casos:
 
 $$
 S \circ R=\{(1,0),(1,1),(2,1),(2,2),(3,0),(3,1)\}.
 $$
+:::
 
 ## Relaciones $n$-arias
 
@@ -216,7 +224,12 @@ $$
 
 Los conjuntos $A_1, A_2, \dots, A_n$ se llaman dominios de la relación y $n$ es su grado.
 
-**Ejemplo.** Sea $R$ la relación en $\mathbb{N} \times \mathbb{N} \times \mathbb{N}$ que consta de las ternas $(a,b,c)$ en las que $a,b,c$ son enteros positivos con $a<b<c$. Entonces $(1,2,3)\in R$, pero $(2,4,3)\notin R$. El grado de esta relación es $3$ y sus dominios son todos iguales a $\mathbb{N}$.
+**Ejemplo.** Sea $R$ la relación en $\mathbb{N} \times \mathbb{N} \times \mathbb{N}$ que consta de las ternas $(a,b,c)$ en las que $a,b,c$ son enteros positivos con $a<b<c$. ¿Pertenecen $(1,2,3)$ y $(2,4,3)$ a $R$? ¿Cuál es el grado de esta relación?
+
+:::{admonition} Solución
+:class: dropdown
+$(1,2,3)\in R$, pero $(2,4,3)\notin R$. El grado de esta relación es $3$ y sus dominios son todos iguales a $\mathbb{N}$.
+:::
 
 ### Modelo relacional de datos
 
@@ -245,10 +258,13 @@ Es un modelo para representar bases de datos basado en el concepto de relación.
 
 ¿Qué dominios son claves primarias para la relación $n$-aria que se muestra en la Tabla Estudiantes, suponiendo que no se va a añadir en el futuro ninguna $n$-tupla?
 
+:::{admonition} Solución
+:class: dropdown
 - Como hay una sola 4-tupla en la tabla para cada nombre de estudiante, el dominio de nombres de estudiantes es una clave primaria.
 - De forma similar, los números ID en esta tabla son únicos, de modo que el dominio de números ID es también una clave primaria.
 - El dominio de programa no es una clave primaria, ya que hay más de una 4-tupla que contiene el mismo programa.
 - El dominio de promedio tampoco es una clave primaria, porque hay dos 4-tuplas con el mismo promedio.
+:::
 
 Las $n$-tuplas de una relación $n$-aria también pueden identificarse de manera unívoca mediante combinaciones de dominios. Cuando una $n$-tupla de una relación viene determinada por los valores de un conjunto de dominios, al producto cartesiano de estos dominios se le llama **clave compuesta**.
 
@@ -256,7 +272,12 @@ Las $n$-tuplas de una relación $n$-aria también pueden identificarse de manera
 
 Sea $R$ una relación $n$-aria y $C$ una condición que puede ser satisfecha por los elementos de $R$. Entonces, el operador de selección $s_C$ transforma la relación $n$-aria $R$ en la relación $n$-aria formada por todas las $n$-tuplas de $R$ que satisfacen la condición $C$.
 
-**Ejemplo.** Para hallar los registros de estudiantes de informática en la relación $n$-aria que se muestra en la Tabla Estudiantes, usamos el operador $s_C$ donde $C$ es la condición Programa = "Informática". El resultado son las dos 4-tuplas (Ackermann, 231455, Informática, 3,88) y (Chou, 102147, Informática, 3,49).
+**Ejemplo.** Para hallar los registros de estudiantes de informática en la relación $n$-aria que se muestra en la Tabla Estudiantes, usamos el operador $s_C$ donde $C$ es la condición Programa = "Informática". ¿Qué 4-tuplas resultan?
+
+:::{admonition} Solución
+:class: dropdown
+El resultado son las dos 4-tuplas (Ackermann, 231455, Informática, 3,88) y (Chou, 102147, Informática, 3,49).
+:::
 
 **Actividad.** Encuentre los registros de estudiantes con un promedio mayor a 3.5 y posteriormente aquellos registros de estudiantes de Informática con un promedio mayor a 3.5.
 
@@ -266,7 +287,10 @@ La proyección $P_{i_1,i_2,\ldots,i_m}$ transforma la $n$-tupla $(a_1,a_2,\ldots
 
 **Ejemplo.** ¿Cuál es el resultado de aplicar la proyección $P_{1,3}$ a las 4-tuplas $(2,3,0,4)$, (Juana López, 234111001, Geografía, 3,14) y $(a_1,a_2,a_3,a_4)$?
 
-**Solución.** La proyección $P_{1,3}$ transforma estas 4-tuplas en $(2,0)$, (Juana López, Geografía) y $(a_1,a_3)$, respectivamente.
+:::{admonition} Solución
+:class: dropdown
+La proyección $P_{1,3}$ transforma estas 4-tuplas en $(2,0)$, (Juana López, Geografía) y $(a_1,a_3)$, respectivamente.
+:::
 
 ### Operador de Join
 
@@ -302,6 +326,8 @@ En otras palabras, el operador de join $J$ produce a partir de dos relaciones un
 | Zoology          | 335           | A100 | 9:00 A.M. |
 | Zoology          | 412           | A100 | 8:00 A.M. |
 
+:::{admonition} Solución
+:class: dropdown
 Note que $p = 2$ y por lo tanto el grado de la relación $J_2(R,S)$ es $5$.
 
 **TABLA 7** — *Teaching schedule*
@@ -315,6 +341,7 @@ Note que $p = 2$ y por lo tanto el grado de la relación $J_2(R,S)$ es $5$.
 | Grammer   | Physics          | 544           | B505 | 4:00 P.M. |
 | Rosen     | Computer Science | 518           | N521 | 2:00 P.M. |
 | Rosen     | Mathematics      | 575           | N502 | 3:00 P.M. |
+:::
 
 ---
 

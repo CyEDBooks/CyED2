@@ -71,10 +71,11 @@ $$
 
 **Ejemplo.** Dé una función recursiva de $H(n) = \sum_{k=0}^{n} a_k$.
 
-**Solución.**
-
+:::{admonition} Solución
+:class: dropdown
 - **Paso base:** $H(0) = \sum_{k=0}^{0} a_k = a_0$.
 - **Paso recursivo:** $H(n+1) = \sum_{k=0}^{n+1} a_k = \left(\sum_{k=0}^{n} a_k\right) + a_{n+1}$.
+:::
 
 ## Conjuntos y estructuras definidos recursivamente
 
@@ -88,7 +89,9 @@ Las definiciones recursivas de conjuntos también tienen dos partes.
 - **Paso base:** $3 \in S$.
 - **Paso recursivo:** Si $x \in S$ y $y \in S$, entonces $x + y \in S$.
 
-**Solución.** Los nuevos elementos de $S$ se van construyendo a partir del paso base de la siguiente manera:
+:::{admonition} Solución
+:class: dropdown
+Los nuevos elementos de $S$ se van construyendo a partir del paso base de la siguiente manera:
 
 $$
 \begin{aligned}
@@ -99,6 +102,7 @@ $$
 &S = \{3,6,9,12,15,18,21,\dots\}
 \end{aligned}
 $$
+:::
 
 **Actividad.** Describa el conjunto $S$ por comprensión.
 
@@ -112,8 +116,8 @@ Un algoritmo se llama recursivo si resuelve un problema reduciéndolo a un caso 
 
 **Ejemplo.** Diseñe un algoritmo recursivo que calcule el factorial.
 
-**Solución.**
-
+:::{admonition} Solución
+:class: dropdown
 ```
 procedure factorial(n : entero positivo)
 if n = 1 then
@@ -121,6 +125,7 @@ if n = 1 then
 else
     factorial(n) := n · factorial(n − 1)
 ```
+:::
 
 ## Introducción a Scala
 

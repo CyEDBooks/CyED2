@@ -261,11 +261,12 @@ $$
 
 3. ¿Cuáles son las clases de equivalencia de la congruencia módulo $3$?
 
-**Solución.**
-
+:::{admonition} Solución
+:class: dropdown
 1. La colección de conjuntos $A_1=\{1,2,3\}$, $A_2=\{4,5\}$, $A_3=\{6\}$ forma la partición de $A$. Estos conjuntos son disjuntos y su unión forma $A$.
 2. $R=\{(1,1),(1,3),(1,4),(2,2),(2,6),(3,1),(3,3),(3,4),(4,1),(4,3),(4,4),(5,5),(5,7),(6,2),(6,6),(7,5),(7,7)\}$.
 3. $[0]_3=\{\dots,-3,0,3,\dots\}$, $[1]_3=\{\dots,-2,1,4,\dots\}$, $[2]_3=\{\dots,-1,2,5,\dots\}$.
+:::
 
 ### Clases de equivalencia módulo 3, paso a paso
 
@@ -313,7 +314,10 @@ Se dice que una relación $R$ en un conjunto $S$ es un **orden parcial** si es r
 
 **Ejemplo.** Demuestre que la relación "mayor o igual que" ($\geq$) es un orden parcial en el conjunto de los enteros.
 
-**Solución.** Como $a \geq a$ para cada entero $a$, $\geq$ es reflexiva. Si $a \geq b$ y $b \geq a$, entonces $a = b$; por tanto, $\geq$ es antisimétrica. Finalmente, $\geq$ es transitiva, ya que $a \geq b$ y $b \geq c$ implican que $a \geq c$. Se sigue que $\geq$ es un orden parcial en el conjunto de los enteros y $(\mathbb{Z},\geq)$ es un conjunto parcialmente ordenado.
+:::{admonition} Solución
+:class: dropdown
+Como $a \geq a$ para cada entero $a$, $\geq$ es reflexiva. Si $a \geq b$ y $b \geq a$, entonces $a = b$; por tanto, $\geq$ es antisimétrica. Finalmente, $\geq$ es transitiva, ya que $a \geq b$ y $b \geq c$ implican que $a \geq c$. Se sigue que $\geq$ es un orden parcial en el conjunto de los enteros y $(\mathbb{Z},\geq)$ es un conjunto parcialmente ordenado.
+:::
 
 En un conjunto parcialmente ordenado, la notación $a \preceq b$ denota que $(a,b)\in R$. Se usa esta notación porque la relación "menor o igual que" es un paradigma para los órdenes parciales. La notación $a \prec b$ quiere decir que $a \preceq b$, pero $a \neq b$. También se dice que "$a$ es menor que $b$" o que "$b$ es mayor que $a$" si $a \prec b$.
 
@@ -321,7 +325,10 @@ Se dice que los elementos $a$ y $b$ de un conjunto parcialmente ordenado $(S,\pr
 
 **Ejemplo.** En el conjunto parcialmente ordenado $(\mathbb{Z}^+, \mid)$, ¿son comparables los números enteros $3$ y $9$? ¿Son comparables $5$ y $7$?
 
-**Solución.** Los enteros $3$ y $9$ son comparables, ya que $3 \mid 9$. Los enteros $5$ y $7$ son no comparables, ya que $5 \nmid 7$ y $7 \nmid 5$.
+:::{admonition} Solución
+:class: dropdown
+Los enteros $3$ y $9$ son comparables, ya que $3 \mid 9$. Los enteros $5$ y $7$ son no comparables, ya que $5 \nmid 7$ y $7 \nmid 5$.
+:::
 
 ### Conjuntos totalmente ordenados
 
@@ -356,7 +363,10 @@ si bien $a_1 \prec_1 b_1$ o bien $a_1 = b_1$ y $a_2 \prec_2 b_2$. Obtenemos un o
 
 **Ejemplo.** Determine si es cierto o no que $(3,5) \prec (4,8)$, que $(3,8) \prec (4,5)$ y que $(4,9) \prec (4,11)$ en el conjunto parcialmente ordenado $(\mathbb{Z}\times\mathbb{Z},\preceq)$, donde $\preceq$ es el orden lexicográfico construido a partir de la relación usual $\leq$ en $\mathbb{Z}$.
 
-**Solución.** Como $3 < 4$, se sigue que $(3,5) \prec (4,8)$ y que $(3,8) \prec (4,5)$. Se tiene que $(4,9) \prec (4,11)$, ya que las primeras componentes de $(4,9)$ y $(4,11)$ son iguales, pero $9 < 11$.
+:::{admonition} Solución
+:class: dropdown
+Como $3 < 4$, se sigue que $(3,5) \prec (4,8)$ y que $(3,8) \prec (4,5)$. Se tiene que $(4,9) \prec (4,11)$, ya que las primeras componentes de $(4,9)$ y $(4,11)$ son iguales, pero $9 < 11$.
+:::
 
 En la siguiente figura aparecen en azul los pares de $(\mathbb{Z}^+ \times \mathbb{Z}^+,\preceq)$ que son menores que $(3,4)$.
 
