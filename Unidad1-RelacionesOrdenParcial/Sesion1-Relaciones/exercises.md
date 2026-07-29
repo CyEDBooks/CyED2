@@ -20,19 +20,19 @@ Use esta página después de leer el [material de estudio de la Sesión 1](index
 
 **2)** Determine si la relación $R$ en el conjunto de todas las personas es reflexiva, simétrica, antisimétrica y/o transitiva, donde $(a,b)\in R$ si, y sólo si:
 
-a) $a$ es más alto que $b$.
-b) $a$ y $b$ nacieron el mismo día.
-c) $a$ tiene el mismo nombre de pila que $b$.
-d) $a$ y $b$ tienen un abuelo o abuela en común.
+- a) $a$ es más alto que $b$.
+- b) $a$ y $b$ nacieron el mismo día.
+- c) $a$ tiene el mismo nombre de pila que $b$.
+- d) $a$ y $b$ tienen un abuelo o abuela en común.
 
 **3)** Determine si la relación $R$ en el conjunto de todos los números reales es reflexiva, simétrica, antisimétrica y/o transitiva, donde $(x,y)\in R$ si, y sólo si:
 
-a) $x + y = 0$
-b) $x = \pm y$
-c) $x - y$ es un número racional
-d) $xy \ge 0$
-e) $x = 1$
-f) $x = 1$ o $y = 1$
+- a) $x + y = 0$
+- b) $x = \pm y$
+- c) $x - y$ es un número racional
+- d) $xy \ge 0$
+- e) $x = 1$
+- f) $x = 1$ o $y = 1$
 
 **4)** Sean
 
@@ -46,9 +46,9 @@ $$
 
 relaciones de $\{1,2,3\}$ en $\{1,2,3,4\}$. Halle:
 
-a) $R_1 \cup R_2$
-b) $R_1 \cap R_2$
-c) $R_1 - R_2$
+- a) $R_1 \cup R_2$
+- b) $R_1 \cap R_2$
+- c) $R_1 - R_2$
 
 **5)** Sea
 
@@ -74,8 +74,8 @@ $$
 
 **8)** Las 4-tuplas en una relación 4-aria representan los siguientes atributos de una base de datos de libros publicados: título, ISBN, fecha de publicación y número de páginas.
 
-a) ¿Cuál será una probable clave primaria para esta relación?
-b) ¿Bajo qué condiciones será (título, fecha de publicación) una clave compuesta?
+- a) ¿Cuál será una probable clave primaria para esta relación?
+- b) ¿Bajo qué condiciones será (título, fecha de publicación) una clave compuesta?
 
 **9)** Con la TABLA 7 (*Teaching schedule*) de la Sesión 1, ¿qué se obtiene al aplicar el operador de selección $s_C$ si $C$ es la condición Room = A100?
 

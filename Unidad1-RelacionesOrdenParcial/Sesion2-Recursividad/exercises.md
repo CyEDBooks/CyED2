@@ -11,17 +11,17 @@ Use esta página después de leer el [material de estudio de la Sesión 2](index
 
 **1)** Obtenga $f(2), f(3), f(4)$ y $f(5)$ si $f$ se define recursivamente por $f(0) = f(1) = 1$ y para $n = 1, 2, \dots$, como:
 
-a) $f(n+1) = f(n) - f(n-1)$
-b) $f(n+1) = f(n)f(n-1)$
-c) $f(n+1) = f(n)^2 + f(n-1)^3$
-d) $f(n+1) = f(n)/f(n-1)$
+- a) $f(n+1) = f(n) - f(n-1)$
+- b) $f(n+1) = f(n)f(n-1)$
+- c) $f(n+1) = f(n)^2 + f(n-1)^3$
+- d) $f(n+1) = f(n)/f(n-1)$
 
 **2)** Dé una función recursiva para la sucesión $\{a_n\}$, $n = 1,2,3,\dots$, si:
 
-a) $a_n = 4n - 2$
-b) $a_n = 1 + (-1)^n$
-c) $a_n = n(n+1)$
-d) $a_n = n^2$
+- a) $a_n = 4n - 2$
+- b) $a_n = 1 + (-1)^n$
+- c) $a_n = n(n+1)$
+- d) $a_n = n^2$
 
 **3)** Dé un algoritmo recursivo para calcular la suma de los $n$ primeros enteros positivos impares ($n \in \mathbb{Z}^+$).
 
