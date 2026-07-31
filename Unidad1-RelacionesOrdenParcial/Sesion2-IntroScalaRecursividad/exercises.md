@@ -7,6 +7,8 @@ title: "Unidad 1 · Sesión 2: Ejercicios"
 
 # Unidad 1 · Sesión 2: Ejercicios
 
+Los ejercicios de esta página se enfocan en la parte de recursividad de la [Sesión 2](index.md); los ejercicios cortos de Scala (definir y probar funciones) están señalados como **Actividad** dentro del material de estudio.
+
 Use esta página después de leer el [material de estudio de la Sesión 2](index.md).
 
 **1)** Obtenga $f(2), f(3), f(4)$ y $f(5)$ si $f$ se define recursivamente por $f(0) = f(1) = 1$ y para $n = 1, 2, \dots$, como:

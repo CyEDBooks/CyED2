@@ -33,8 +33,8 @@ Para cada unidad:
 
 * Sesión 1 — Relaciones: [Material de estudio](./Unidad1-RelacionesOrdenParcial/Sesion1-Relaciones/index.md) ·
   [Ejercicios](./Unidad1-RelacionesOrdenParcial/Sesion1-Relaciones/exercises.md)
-* Sesión 2 — Recursividad: [Material de estudio](./Unidad1-RelacionesOrdenParcial/Sesion2-Recursividad/index.md) ·
-  [Ejercicios](./Unidad1-RelacionesOrdenParcial/Sesion2-Recursividad/exercises.md)
+* Sesión 2 — Introducción a Scala y Recursividad: [Material de estudio](./Unidad1-RelacionesOrdenParcial/Sesion2-IntroScalaRecursividad/index.md) ·
+  [Ejercicios](./Unidad1-RelacionesOrdenParcial/Sesion2-IntroScalaRecursividad/exercises.md)
 * Sesión 3 — Equivalencia y orden parcial: [Material de estudio](./Unidad1-RelacionesOrdenParcial/Sesion3-EquivalenciaOrdenParcial/index.md) ·
   [Ejercicios](./Unidad1-RelacionesOrdenParcial/Sesion3-EquivalenciaOrdenParcial/exercises.md)
 * Sesión 4 — Taller de funciones recursivas: [Material de estudio](./Unidad1-RelacionesOrdenParcial/Sesion4-TallerFuncionesRecursivas/index.md) ·

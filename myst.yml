@@ -45,11 +45,11 @@ project:
               title: Estudio
             - file: Unidad1-RelacionesOrdenParcial/Sesion1-Relaciones/exercises.md
               title: Ejercicios
-        - title: "Sesión 2: Recursividad"
+        - title: "Sesión 2: Introducción a Scala y Recursividad"
           children:
-            - file: Unidad1-RelacionesOrdenParcial/Sesion2-Recursividad/index.md
+            - file: Unidad1-RelacionesOrdenParcial/Sesion2-IntroScalaRecursividad/index.md
               title: Estudio
-            - file: Unidad1-RelacionesOrdenParcial/Sesion2-Recursividad/exercises.md
+            - file: Unidad1-RelacionesOrdenParcial/Sesion2-IntroScalaRecursividad/exercises.md
               title: Ejercicios
         - title: "Sesión 3: Equivalencia y orden parcial"
           children:
