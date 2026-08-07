@@ -37,8 +37,10 @@ Para cada unidad:
   [Ejercicios](./Unidad1-RelacionesOrdenParcial/Sesion2-IntroScalaRecursividad/exercises.md)
 * Sesión 3 — Equivalencia y orden parcial: [Material de estudio](./Unidad1-RelacionesOrdenParcial/Sesion3-EquivalenciaOrdenParcial/index.md) ·
   [Ejercicios](./Unidad1-RelacionesOrdenParcial/Sesion3-EquivalenciaOrdenParcial/exercises.md)
-* Sesión 4 — Taller de funciones recursivas: [Material de estudio](./Unidad1-RelacionesOrdenParcial/Sesion4-TallerFuncionesRecursivas/index.md) ·
-  [Ejercicios](./Unidad1-RelacionesOrdenParcial/Sesion4-TallerFuncionesRecursivas/exercises.md)
+* Sesión 4 — Elementos básicos de la programación funcional, recursividad y listas: [Material de estudio](./Unidad1-RelacionesOrdenParcial/Sesion4-ElementosBasicosProgramacionFuncional/index.md) ·
+  [Ejercicios](./Unidad1-RelacionesOrdenParcial/Sesion4-ElementosBasicosProgramacionFuncional/exercises.md)
+* Sesión 5 — Taller de funciones recursivas: [Material de estudio](./Unidad1-RelacionesOrdenParcial/Sesion5-TallerFuncionesRecursivas/index.md) ·
+  [Ejercicios](./Unidad1-RelacionesOrdenParcial/Sesion5-TallerFuncionesRecursivas/exercises.md)
 
 Las siguientes unidades (Recurrencias e inducción matemática, Divide y
 vencerás, Teoría de números, y Programación funcional) se están migrando

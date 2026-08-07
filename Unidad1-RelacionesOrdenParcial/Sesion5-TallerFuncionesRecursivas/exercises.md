@@ -2,12 +2,12 @@
 # Copyright (c) 2026 Angela Villota, and collaborators from the CyED block
 # Licensed under the PolyForm Noncommercial License 1.0.0.
 # Commercial use is prohibited without prior written authorization.
-title: "Unidad 1 · Sesión 4: Ejercicios"
+title: "Unidad 1 · Sesión 5: Ejercicios"
 ---
 
-# Unidad 1 · Sesión 4: Ejercicios
+# Unidad 1 · Sesión 5: Ejercicios
 
-Use esta página después de leer el [material de estudio de la Sesión 4](index.md).
+Use esta página después de leer el [material de estudio de la Sesión 5](index.md).
 
 A continuación encontrará unas definiciones recursivas; para cada una de ellas, desarrolle una o más funciones en Scala usando el IDE o entorno de programación de su preferencia.
 
