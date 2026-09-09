@@ -69,6 +69,14 @@ project:
               title: Estudio
             - file: Unidad1-RelacionesOrdenParcial/Sesion5-TallerFuncionesRecursivas/exercises.md
               title: Ejercicios
+    - title: "Unidad 2: Recurrencias, inducción matemática y divide y vencerás"
+      children:
+        - title: "Sesión 6: Inducción matemática"
+          children:
+            - file: Unidad2-InduccionRecursividad/Sesion6-Estudio/index.md
+              title: Estudio
+            - file: Unidad2-InduccionRecursividad/Sesion6-ConceptosEjemplos/index.md
+              title: Conceptos y ejemplos
   github: https://github.com/CyEDBooks/CyED2
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
 site:

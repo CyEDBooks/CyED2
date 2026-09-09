@@ -42,6 +42,10 @@ Para cada unidad:
 * Sesión 5 — Taller de funciones recursivas: [Material de estudio](./Unidad1-RelacionesOrdenParcial/Sesion5-TallerFuncionesRecursivas/index.md) ·
   [Ejercicios](./Unidad1-RelacionesOrdenParcial/Sesion5-TallerFuncionesRecursivas/exercises.md)
 
-Las siguientes unidades (Recurrencias e inducción matemática, Divide y
-vencerás, Teoría de números, y Programación funcional) se están migrando
-progresivamente.
+## Unidad 2: Recurrencias, inducción matemática y divide y vencerás
+
+* Sesión 6 — Inducción matemática: [Estudio](./Unidad2-InduccionRecursividad/Sesion6-Estudio/index.md) ·
+  [Conceptos y ejemplos](./Unidad2-InduccionRecursividad/Sesion6-ConceptosEjemplos/index.md)
+
+Las siguientes unidades (Divide y vencerás, Teoría de números, y
+Programación funcional) se están migrando progresivamente.
