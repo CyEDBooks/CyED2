@@ -7,8 +7,6 @@ title: "Unidad 2 · Sesión 6: Inducción matemática"
 
 # Unidad 2 · Sesión 6: Inducción matemática
 
-*Clase del 27 de agosto de 2025.*
-
 ## Objetivos
 
 - Aplicar el principio de inducción matemática para definir estructuras discretas, demostrar sus propiedades y verificar algoritmos formalmente, en particular, establecer y resolver relaciones de recurrencia asociadas a la complejidad de dichos algoritmos.

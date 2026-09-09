@@ -112,13 +112,19 @@ Entonces $P(k+1)$ es verdadera y, por inducción, $P(n)$ vale para todo $n \ge 0
 
 :::{admonition} Solución
 :class: dropdown
-**Paso base.** $P(1)$: $1 = 1\cdot 2/2 = 1$.
+En notación de sumatoria, $P(n)$ afirma que
 
-**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $1+2+3+\dots+n = n(n+1)/2$ y sumamos $(n+1)$ a ambos lados:
+$$
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}.
+$$
+
+**Paso base.** $P(1)$: $\displaystyle\sum_{i=1}^{1} i = 1 = 1\cdot 2/2$.
+
+**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $\displaystyle\sum_{i=1}^{n} i = n(n+1)/2$ y sumamos $(n+1)$ a ambos lados:
 
 $$
 \begin{aligned}
-1+2+3+\dots+n+(n+1) &= n(n+1)/2 + (n+1) \\
+\sum_{i=1}^{n+1} i = \sum_{i=1}^{n} i + (n+1) &= n(n+1)/2 + (n+1) \\
 &= (n+1)(n+2)/2 \\
 &= P(n+1).
 \end{aligned}
@@ -129,13 +135,19 @@ $$
 
 :::{admonition} Solución
 :class: dropdown
-**Paso base.** $P(0)$: $2^0 = 1$ y $2^{0+1}-1 = 1$.
+En notación de sumatoria, $P(n)$ afirma que
 
-**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $2^0+2^1+2^2+\dots+2^n = 2^{n+1}-1$ y sumamos $2^{n+1}$ a ambos lados:
+$$
+\sum_{i=0}^{n} 2^i = 2^{n+1}-1.
+$$
+
+**Paso base.** $P(0)$: $\displaystyle\sum_{i=0}^{0} 2^i = 2^0 = 1$ y $2^{0+1}-1 = 1$.
+
+**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $\displaystyle\sum_{i=0}^{n} 2^i = 2^{n+1}-1$ y sumamos $2^{n+1}$ a ambos lados:
 
 $$
 \begin{aligned}
-2^0+2^1+2^2+\dots+2^n+2^{n+1} &= (2^{n+1}-1) + 2^{n+1} \\
+\sum_{i=0}^{n+1} 2^i = \sum_{i=0}^{n} 2^i + 2^{n+1} &= (2^{n+1}-1) + 2^{n+1} \\
 &= 2\cdot 2^{n+1}-1 \\
 &= 2^{(n+1)+1}-1 = P(n+1).
 \end{aligned}
@@ -146,13 +158,19 @@ $$
 
 :::{admonition} Solución
 :class: dropdown
-**Paso base.** $P(1)$: $1 = 1^2$.
+En notación de sumatoria, $P(n)$ afirma que
 
-**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $1+3+5+\dots+(2n-1)=n^2$ y sumamos $(2n+1)$ a ambos lados:
+$$
+\sum_{i=1}^{n} (2i-1) = n^2.
+$$
+
+**Paso base.** $P(1)$: $\displaystyle\sum_{i=1}^{1} (2i-1) = 1 = 1^2$.
+
+**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $\displaystyle\sum_{i=1}^{n} (2i-1) = n^2$ y sumamos $(2n+1)$ a ambos lados:
 
 $$
 \begin{aligned}
-1+3+5+\dots+(2n-1)+(2n+1) &= n^2 + (2n+1) \\
+\sum_{i=1}^{n+1} (2i-1) = \sum_{i=1}^{n} (2i-1) + (2n+1) &= n^2 + (2n+1) \\
 &= n^2 + 2n + 1 \\
 &= (n+1)^2 \\
 &= P(n+1).
@@ -164,13 +182,19 @@ $$
 
 :::{admonition} Solución
 :class: dropdown
-**Paso base.** $P(1)$: $1^2=(1\cdot 2\cdot 3)/6$.
+En notación de sumatoria, $P(n)$ afirma que
 
-**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $1^2+2^2+3^2+\dots+n^2=n(n+1)(2n+1)/6$ y sumamos $(n+1)^2$ a ambos lados:
+$$
+\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}.
+$$
+
+**Paso base.** $P(1)$: $\displaystyle\sum_{i=1}^{1} i^2 = 1^2=(1\cdot 2\cdot 3)/6$.
+
+**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $\displaystyle\sum_{i=1}^{n} i^2 = n(n+1)(2n+1)/6$ y sumamos $(n+1)^2$ a ambos lados:
 
 $$
 \begin{aligned}
-1^2+2^2+\dots+n^2+(n+1)^2 &= n(n+1)(2n+1)/6+(n+1)^2\\
+\sum_{i=1}^{n+1} i^2 = \sum_{i=1}^{n} i^2+(n+1)^2 &= n(n+1)(2n+1)/6+(n+1)^2\\
 &=(n+1)(2n^2+7n+6)/6\\
 &=(n+1)(2n+3)(n+2)/6\\
 &=\frac{(n+1)[(n+1)+1][2(n+1)+1]}{6}\\
@@ -183,13 +207,19 @@ $$
 
 :::{admonition} Solución
 :class: dropdown
-**Paso base.** $P(1)$: $1^3=[(1\cdot 2)/2]^2$.
+En notación de sumatoria, $P(n)$ afirma que
 
-**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $1^3+2^3+\dots+n^3=[n(n+1)/2]^2$ y sumamos $(n+1)^3$ a ambos lados:
+$$
+\sum_{i=1}^{n} i^3 = \left[\frac{n(n+1)}{2}\right]^2.
+$$
+
+**Paso base.** $P(1)$: $\displaystyle\sum_{i=1}^{1} i^3 = 1^3=[(1\cdot 2)/2]^2$.
+
+**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $\displaystyle\sum_{i=1}^{n} i^3=[n(n+1)/2]^2$ y sumamos $(n+1)^3$ a ambos lados:
 
 $$
 \begin{aligned}
-1^3+2^3+\dots+n^3+(n+1)^3 &=[n(n+1)/2]^2+(n+1)^3\\
+\sum_{i=1}^{n+1} i^3 = \sum_{i=1}^{n} i^3+(n+1)^3 &=[n(n+1)/2]^2+(n+1)^3\\
 &=n^2(n+1)^2/4+(n+1)^3\\
 &=(n+1)^2[n^2/4+(n+1)]\\
 &=(n+1)^2(n+2)^2/4\\
@@ -203,13 +233,19 @@ $$
 
 :::{admonition} Solución
 :class: dropdown
-**Paso base.** $P(1)$: $1\cdot 2=(1\cdot 2\cdot 3)/3=2$.
+En notación de sumatoria, $P(n)$ afirma que
 
-**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $1\cdot 2+2\cdot 3+\dots+n(n+1)=n(n+1)(n+2)/3$ y sumamos $(n+1)(n+2)$ a ambos lados:
+$$
+\sum_{i=1}^{n} i(i+1) = \frac{n(n+1)(n+2)}{3}.
+$$
+
+**Paso base.** $P(1)$: $\displaystyle\sum_{i=1}^{1} i(i+1) = 1\cdot 2=(1\cdot 2\cdot 3)/3=2$.
+
+**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $\displaystyle\sum_{i=1}^{n} i(i+1) = n(n+1)(n+2)/3$ y sumamos $(n+1)(n+2)$ a ambos lados:
 
 $$
 \begin{aligned}
-1\cdot 2+2\cdot 3+\dots+n(n+1)+(n+1)(n+2) &= n(n+1)(n+2)/3 + (n+1)(n+2) \\
+\sum_{i=1}^{n+1} i(i+1) = \sum_{i=1}^{n} i(i+1) + (n+1)(n+2) &= n(n+1)(n+2)/3 + (n+1)(n+2) \\
 &= (n+1)(n+2)\,[n/3+1] \\
 &= (n+1)(n+2)(n+3)/3 \\
 &= P(n+1).
@@ -221,13 +257,19 @@ $$
 
 :::{admonition} Solución
 :class: dropdown
-**Paso base.** $P(1)$: $1\cdot 1!=(1+1)!-1=1$.
+En notación de sumatoria, $P(n)$ afirma que
 
-**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $1\cdot 1!+2\cdot 2!+\dots+n\cdot n!=(n+1)!-1$ y sumamos $(n+1)(n+1)!$ a ambos lados:
+$$
+\sum_{i=1}^{n} i\cdot i! = (n+1)!-1.
+$$
+
+**Paso base.** $P(1)$: $\displaystyle\sum_{i=1}^{1} i\cdot i! = 1\cdot 1!=(1+1)!-1=1$.
+
+**Paso inductivo.** $P(n) \rightarrow P(n+1)$. Partimos de $\displaystyle\sum_{i=1}^{n} i\cdot i!=(n+1)!-1$ y sumamos $(n+1)(n+1)!$ a ambos lados:
 
 $$
 \begin{aligned}
-1\cdot 1!+2\cdot 2!+\dots+n\cdot n!+(n+1)(n+1)! &=(n+1)!-1+(n+1)(n+1)!\\
+\sum_{i=1}^{n+1} i\cdot i! = \sum_{i=1}^{n} i\cdot i!+(n+1)(n+1)! &=(n+1)!-1+(n+1)(n+1)!\\
 &=(n+1)![1+(n+1)]-1\\
 &=(n+1)!(n+2)-1\\
 &=(n+2)!-1\\
