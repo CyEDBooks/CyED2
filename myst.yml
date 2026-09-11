@@ -77,6 +77,14 @@ project:
               title: Estudio
             - file: Unidad2-InduccionRecursividad/Sesion6-ConceptosEjemplos/index.md
               title: Conceptos y ejemplos
+        - title: "Sesión 7: Funciones y los procesos que ellas generan"
+          children:
+            - file: Unidad2-InduccionRecursividad/Sesion7-Estudio/index.md
+              title: Estudio
+            - file: Unidad2-InduccionRecursividad/Sesion7-ConceptosEjemplos/index.md
+              title: Conceptos y ejemplos
+            - file: Unidad2-InduccionRecursividad/Sesion7-Ejercicios/index.md
+              title: Ejercicios
   github: https://github.com/CyEDBooks/CyED2
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
 site:
