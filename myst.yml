@@ -85,6 +85,14 @@ project:
               title: Conceptos y ejemplos
             - file: Unidad2-InduccionRecursividad/Sesion7-Ejercicios/index.md
               title: Ejercicios
+        - title: "Sesión 8: Inducción estructural"
+          children:
+            - file: Unidad2-InduccionRecursividad/Sesion8-InduccionEstructural/Estudio/index.md
+              title: Estudio
+            - file: Unidad2-InduccionRecursividad/Sesion8-InduccionEstructural/Complemento1/index.md
+              title: Complemento 1
+            - file: Unidad2-InduccionRecursividad/Sesion8-InduccionEstructural/Complemento2/index.md
+              title: Complemento 2
   github: https://github.com/CyEDBooks/CyED2
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
 site:
