@@ -63,12 +63,12 @@ def insertionSort(lista: List[Int]): List[Int] = lista match {
 ```
 
 ::::{image} images/insertion-sort.gif
-:alt: Animación del ordenamiento por inserción tomando una carta a la vez de una secuencia desordenada e insertándola en su posición correcta dentro de la parte ya ordenada
-:width: 50%
+:alt: Animación de barras del ordenamiento por inserción mostrando cómo cada barra se inserta en su posición correcta dentro de la parte ya ordenada del arreglo
+:width: 45%
 :align: center
 ::::
 
-*Animación tomada de Wikipedia (inglés), artículo* [Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)*, autor Swfung8, licencia CC BY-SA 3.0.*
+*Animación tomada de Wikipedia (inglés), artículo* [Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)*, autor Suaudeau, licencia CC BY-SA 4.0.*
 
 :::{admonition} ¿Por qué `insertionSort` no es divide y vencerás?
 :class: important
@@ -121,15 +121,21 @@ Para diseñar cada algoritmo respondemos las mismas preguntas:
 
 *Imagen tomada del texto* How to Design Programs *de Matthias Felleisen, Robert Bruce Findler, Matthew Flatt y Shriram Krishnamurthi.*
 
-::::{image} images/merge-sort.gif
-:alt: Animación de mergeSort dividiendo repetidamente la secuencia por la mitad y luego mezclando las mitades ya ordenadas
-:width: 50%
+::::{image} images/merge-sort-1.gif
+:alt: Animación de barras de mergeSort mostrando el arreglo dividiéndose y mezclándose de regreso en orden, con contador de comparaciones y accesos
+:width: 60%
 :align: center
 ::::
 
-*Animación tomada de Wikipedia (inglés), artículo* [Merge sort](https://en.wikipedia.org/wiki/Merge_sort)*, autor Swfung8, licencia CC BY-SA 3.0.*
+::::{image} images/merge-sort-2.gif
+:alt: Animación de barras de mergeSort mostrando paso a paso la mezcla de sublistas ya ordenadas hasta obtener el arreglo completo ordenado
+:width: 60%
+:align: center
+::::
 
-**Traduciendo el algoritmo original (Scheme) a Scala.** La clase fuente de esta sesión definía `mergeSort` con tres funciones auxiliares: `particion-bajo` (toma los primeros `n` elementos), `particion-alto` (descarta los primeros `n - 1` elementos) y `mezclar` (combina dos listas ya ordenadas conservando el orden). Así se ven en Scala, manteniendo la misma descomposición:
+*Animaciones de barras de mergeSort: la primera generada con* Sound of Sorting *de Timo Bingmann ([panthema.net/2013/sound-of-sorting](https://panthema.net/2013/sound-of-sorting/)); la segunda, material de curso de* [Qvault](https://qvault.io/)*.*
+
+**Implementación en Scala.** Vamos a definir `mergeSort` con tres funciones auxiliares: `particionBajo` (toma los primeros `n` elementos), `particionAlto` (descarta los primeros `n - 1` elementos) y `mezclar` (combina dos listas ya ordenadas conservando el orden):
 
 ```scala
 def particionBajo(n: Int, lista: List[Int]): List[Int] =
@@ -172,7 +178,7 @@ def mergeSort(lista: List[Int]): List[Int] = lista match {
 
 :::{admonition} Nota
 :class: note
-En la Sesión 7 vimos una versión de `msort` que usa `xs.splitAt(n)` para partir la lista en una sola línea. Aquí mantuvimos `particionBajo`/`particionAlto` por separado, siguiendo la misma descomposición del algoritmo original en Scheme, para que se vea con claridad la correspondencia entre las dos versiones. Ambas implementaciones resuelven el mismo problema con la misma estrategia; solo cambia qué tan "de bajo nivel" se escriben las funciones auxiliares.
+En la Sesión 7 vimos una versión de `msort` que usa `xs.splitAt(n)` para partir la lista en una sola línea. Aquí mantuvimos `particionBajo`/`particionAlto` por separado para que se vea con claridad cada paso de la descomposición. Ambas implementaciones resuelven el mismo problema con la misma estrategia; solo cambia qué tan "de bajo nivel" se escriben las funciones auxiliares.
 :::
 
 ## 5. QuickSort
@@ -186,14 +192,6 @@ En la Sesión 7 vimos una versión de `msort` que usa `xs.splitAt(n)` para parti
 - Cada una de esas listas se ordena con el mismo procedimiento (llamado recursivo).
 - Se combinan las piezas: `ordenados(menores) ++ [pivote] ++ ordenados(mayores)`.
 
-::::{image} images/quicksort-arbol.png
-:alt: Árbol de recursión de quickSort partiendo la lista [11 8 14 7] escogiendo el primer elemento como pivote en cada paso, hasta llegar a la lista ordenada [7 8 11 14]
-:width: 40%
-:align: center
-::::
-
-*Imagen tomada del material original de esta sesión (recursión generativa y algoritmos de ordenamiento), adaptado del texto* How to Design Programs.
-
 ::::{image} images/quicksort.gif
 :alt: Animación de quickSort escogiendo un pivote y particionando el arreglo en elementos menores y mayores hasta obtenerlo ordenado
 :width: 50%
@@ -202,7 +200,7 @@ En la Sesión 7 vimos una versión de `msort` que usa `xs.splitAt(n)` para parti
 
 *Animación tomada de Wikipedia (inglés), artículo* [Quicksort](https://en.wikipedia.org/wiki/Quicksort)*, autor RolandH, licencia CC BY-SA 3.0.*
 
-**Traduciendo el algoritmo original (Scheme) a Scala.** La clase fuente definía `qsort` usando dos funciones auxiliares, `menores` y `mayores`, y `append` para combinar las tres partes. En Scala:
+**Implementación en Scala.** Vamos a definir `quickSort` usando dos funciones auxiliares, `menores` y `mayores`, y la concatenación de listas para combinar las tres partes:
 
 ```scala
 def menores(pivote: Int, lista: List[Int]): List[Int] =
@@ -219,10 +217,10 @@ def quickSort(lista: List[Int]): List[Int] = lista match {
 ```
 
 :::{admonition} Análisis de datos
-- **¿Caso trivial?** La lista es vacía → ya está ordenada, se retorna igual (`empty` en el original).
+- **¿Caso trivial?** La lista es vacía → ya está ordenada, se retorna igual (`Nil`).
 - **¿Cómo se parte el problema no trivial?** Se toma el primer elemento como pivote y se divide el resto en menores-o-iguales y mayores.
 - **¿Cuántos subproblemas?** Dos: uno por cada sublista.
-- **¿Cómo se combinan las soluciones?** Concatenando (`:::` en Scala, `append` en el original): ordenados-menores, pivote, ordenados-mayores.
+- **¿Cómo se combinan las soluciones?** Concatenando con `:::`: ordenados-menores, pivote, ordenados-mayores.
 - **Terminación.** En cada paso, `quickSort` divide la lista en dos listas estrictamente más pequeñas que la entrada (porque el pivote se retira de ambas); eventualmente el llamado recibe la lista vacía, ahí se detiene la recursión, se unen las salidas y se obtiene el resultado.
 :::
 
@@ -249,8 +247,9 @@ Cada nivel de la recursión (cada "piso" del árbol) hace un trabajo proporciona
 
 - Material original de esta sesión: *Recursión Generativa y algoritmos de ordenamiento*, Fundamentos de Programación, Universidad del Valle.
 - Felleisen, M., Findler, R. B., Flatt, M., Krishnamurthi, S. — *How to Design Programs*.
-- Wikipedia (inglés) — [Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort), animación de Swfung8, CC BY-SA 3.0.
-- Wikipedia (inglés) — [Merge sort](https://en.wikipedia.org/wiki/Merge_sort), animación de Swfung8, CC BY-SA 3.0.
+- Wikipedia (inglés) — [Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort), animación de Suaudeau, CC BY-SA 4.0.
+- Bingmann, T. — [Sound of Sorting](https://panthema.net/2013/sound-of-sorting/), animación de mergeSort.
+- [Qvault](https://qvault.io/) — material de curso, animación de mergeSort.
 - Wikipedia (inglés) — [Quicksort](https://en.wikipedia.org/wiki/Quicksort), animación de RolandH, CC BY-SA 3.0.
 
 ---
