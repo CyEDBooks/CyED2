@@ -97,6 +97,10 @@ project:
           children:
             - file: Unidad2-InduccionRecursividad/Sesion9-AnexoPruebasUnitarias/index.md
               title: Anexo
+        - title: "Sesión 10: Divide y vencerás — MergeSort y QuickSort"
+          children:
+            - file: Unidad2-InduccionRecursividad/Sesion10-DivideVenceras/index.md
+              title: Estudio
   github: https://github.com/CyEDBooks/CyED2
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
 site:
