@@ -224,6 +224,11 @@ def quickSort(lista: List[Int]): List[Int] = lista match {
 - **Terminación.** En cada paso, `quickSort` divide la lista en dos listas estrictamente más pequeñas que la entrada (porque el pivote se retira de ambas); eventualmente el llamado recibe la lista vacía, ahí se detiene la recursión, se unen las salidas y se obtiene el resultado.
 :::
 
+:::{admonition} Código completo: MergeSort y QuickSort paso a paso
+:class: tip
+En el archivo [OrdenamientoDivideVenceras.scala](OrdenamientoDivideVenceras.scala) encuentras una clase de Scala con `mergeSort` y `quickSort` tal como aparecen en esta sesión. También incluye una **prueba de escritorio** para cada algoritmo, que imprime en consola cada llamado recursivo: cómo se **divide** la lista, cuáles son los **casos triviales** y cómo se **combinan** las soluciones (`mezclar` en MergeSort y `:::` en QuickSort). Ejecuta `pruebasDeEscritorio` y compara la salida con el árbol de llamados que dibujarías a mano.
+:::
+
 ## 6. Comparación y complejidad
 
 | Algoritmo | Tipo de recursión | ¿Divide y vencerás? | Tiempo promedio | Peor caso |
