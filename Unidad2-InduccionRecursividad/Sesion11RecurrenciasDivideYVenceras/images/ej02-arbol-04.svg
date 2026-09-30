@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="298" viewBox="0 0 820 298" font-family="Plus Jakarta Sans, Arial, sans-serif">
+<rect width="820" height="298" fill="#ffffff"/>
+<line x1="335.0" y1="51" x2="335.0" y2="97" stroke="#49636f" stroke-width="1.4"/>
+<line x1="335.0" y1="125" x2="335.0" y2="171" stroke="#49636f" stroke-width="1.4"/>
+<line x1="335.0" y1="199" x2="335.0" y2="245" stroke="#49636f" stroke-width="1.4"/>
+<text x="335.0" y="47.0" font-size="16" fill="#023047" text-anchor="middle" font-weight="normal">n</text>
+<text x="335.0" y="121.0" font-size="16" fill="#023047" text-anchor="middle" font-weight="normal">n-1</text>
+<text x="335.0" y="195.0" font-size="16" fill="#023047" text-anchor="middle" font-weight="normal">n-2</text>
+<text x="335.0" y="269.0" font-size="16" fill="#a94700" text-anchor="middle" font-weight="normal">T(n-3)</text>
+</svg>

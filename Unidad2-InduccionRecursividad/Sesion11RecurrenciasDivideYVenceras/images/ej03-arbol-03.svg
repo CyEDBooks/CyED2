@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="224" viewBox="0 0 820 224" font-family="Plus Jakarta Sans, Arial, sans-serif">
+<rect width="820" height="224" fill="#ffffff"/>
+<line x1="335.0" y1="51" x2="227.5" y2="97" stroke="#49636f" stroke-width="1.4"/>
+<line x1="335.0" y1="51" x2="442.5" y2="97" stroke="#49636f" stroke-width="1.4"/>
+<line x1="227.5" y1="125" x2="173.8" y2="171" stroke="#49636f" stroke-width="1.4"/>
+<line x1="227.5" y1="125" x2="281.2" y2="171" stroke="#49636f" stroke-width="1.4"/>
+<line x1="442.5" y1="125" x2="388.8" y2="171" stroke="#49636f" stroke-width="1.4"/>
+<line x1="442.5" y1="125" x2="496.2" y2="171" stroke="#49636f" stroke-width="1.4"/>
+<text x="335.0" y="47.0" font-size="16" fill="#023047" text-anchor="middle" font-weight="normal">1</text>
+<text x="227.5" y="121.0" font-size="16" fill="#023047" text-anchor="middle" font-weight="normal">1</text>
+<text x="442.5" y="121.0" font-size="16" fill="#023047" text-anchor="middle" font-weight="normal">1</text>
+<text x="173.8" y="195.0" font-size="16" fill="#a94700" text-anchor="middle" font-weight="normal">T(n-2)</text>
+<text x="281.2" y="195.0" font-size="16" fill="#a94700" text-anchor="middle" font-weight="normal">T(n-2)</text>
+<text x="388.8" y="195.0" font-size="16" fill="#a94700" text-anchor="middle" font-weight="normal">T(n-2)</text>
+<text x="496.2" y="195.0" font-size="16" fill="#a94700" text-anchor="middle" font-weight="normal">T(n-2)</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="150" viewBox="0 0 820 150" font-family="Plus Jakarta Sans, Arial, sans-serif">
+<rect width="820" height="150" fill="#ffffff"/>
+<line x1="335.0" y1="51" x2="191.7" y2="97" stroke="#49636f" stroke-width="1.4"/>
+<line x1="335.0" y1="51" x2="335.0" y2="97" stroke="#49636f" stroke-width="1.4"/>
+<line x1="335.0" y1="51" x2="478.3" y2="97" stroke="#49636f" stroke-width="1.4"/>
+<text x="335.0" y="47.0" font-size="16" fill="#023047" text-anchor="middle" font-weight="normal">cn²</text>
+<text x="191.7" y="121.0" font-size="16" fill="#a94700" text-anchor="middle" font-weight="normal">T(n/4)</text>
+<text x="335.0" y="121.0" font-size="16" fill="#a94700" text-anchor="middle" font-weight="normal">T(n/4)</text>
+<text x="478.3" y="121.0" font-size="16" fill="#a94700" text-anchor="middle" font-weight="normal">T(n/4)</text>
+</svg>
