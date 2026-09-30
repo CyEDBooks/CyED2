@@ -201,9 +201,10 @@ $\checkmark$ Con esto, $P(y) \Rightarrow P(ya)$ para toda $a \in \Sigma$, lo que
 
 ```scala
 // Suma de una lista
-def sumarLista(lst: List[Int]): Int =
-  if (lst.isEmpty) 0
-  else lst.head + sumarLista(lst.tail)
+def sumarLista(lst: List[Int]): Int = lst match {
+  case Nil    => 0
+  case h :: t => h + sumarLista(t)
+}
 ```
 
 **Traza de ejecución**
@@ -220,37 +221,39 @@ sumarLista(List(1,2,3))
 
 ```scala
 // Longitud de una lista
-def longitud(lst: List[Int]): Int =
-  if (lst.isEmpty) 0
-  else 1 + longitud(lst.tail)
+def longitud(lst: List[Int]): Int = lst match {
+  case Nil    => 0
+  case _ :: t => 1 + longitud(t)
+}
 ```
 
 ```scala
 // Invertir una lista (con auxiliar)
-def invertirAux(n: Int, lst: List[Int]): List[Int] =
-  if (lst.isEmpty) List(n)
-  else lst.head :: invertirAux(n, lst.tail)
+def invertirAux(n: Int, lst: List[Int]): List[Int] = lst match {
+  case Nil    => List(n)
+  case h :: t => h :: invertirAux(n, t)
+}
 
-def invertir(lst: List[Int]): List[Int] =
-  if (lst.isEmpty) List()
-  else invertirAux(lst.head, invertir(lst.tail))
+def invertir(lst: List[Int]): List[Int] = lst match {
+  case Nil    => Nil
+  case h :: t => invertirAux(h, invertir(t))
+}
 ```
 
 ### Ordenar por inserción
 
 ```scala
 // Insertion sort recursivo
-def insertarOrdenado(n: Int, lst: List[Int]): List[Int] =
-  if (lst.isEmpty) List(n)
-  else {
-    if (lst.head < n)
-      lst.head :: insertarOrdenado(n, lst.tail)
-    else n :: lst
-  }
+def insertarOrdenado(n: Int, lst: List[Int]): List[Int] = lst match {
+  case Nil             => List(n)
+  case h :: t if h < n => h :: insertarOrdenado(n, t)
+  case _               => n :: lst
+}
 
-def ordenar(lst: List[Int]): List[Int] =
-  if (lst.isEmpty) List()
-  else insertarOrdenado(lst.head, ordenar(lst.tail))
+def ordenar(lst: List[Int]): List[Int] = lst match {
+  case Nil    => Nil
+  case h :: t => insertarOrdenado(h, ordenar(t))
+}
 ```
 
 :::{admonition} Receta de diseño para listas
@@ -503,9 +506,10 @@ Siga el mismo esquema del ejemplo de $a_{m,n} = m + n(n+1)/2$. Considere los dos
 **Problema.** Considere la siguiente función que duplica cada elemento de una lista:
 
 ```scala
-def duplicar(lst: List[Int]): List[Int] =
-  if (lst.isEmpty) Nil
-  else (lst.head * 2) :: duplicar(lst.tail)
+def duplicar(lst: List[Int]): List[Int] = lst match {
+  case Nil    => Nil
+  case h :: t => (h * 2) :: duplicar(t)
+}
 ```
 
 Y la función `sumarLista` definida anteriormente.
@@ -528,6 +532,59 @@ Demuestre esta propiedad por inducción estructural sobre $l$.
    - Expanda $\mathrm{duplicar}(h :: t)$ según la definición.
    - Aplique `sumarLista` al resultado.
    - Use la H.I. y álgebra para concluir.
+:::
+
+**Problema.** Considere la siguiente función que le suma $1$ a cada elemento de una lista:
+
+```scala
+def incrementar(lst: List[Int]): List[Int] = lst match {
+  case Nil    => Nil
+  case h :: t => (h + 1) :: incrementar(t)
+}
+```
+
+Y las funciones `sumarLista` y `longitud` definidas anteriormente.
+
+:::{admonition} Propiedad a demostrar
+Para toda lista $l$:
+
+$$
+\mathrm{sumarLista}(\mathrm{incrementar}(l)) = \mathrm{sumarLista}(l) + \mathrm{longitud}(l)
+$$
+
+Demuestre esta propiedad por inducción estructural sobre $l$.
+:::
+
+:::{admonition} 💡 Pistas
+:class: dropdown
+1. **Paso base ($l = \mathrm{Nil}$):** Evalúe ambos lados; recuerde que $\mathrm{longitud}(\mathrm{Nil}) = 0$.
+2. **Paso recursivo ($l = h :: t$):**
+   - Establezca la hipótesis inductiva: $\mathrm{sumarLista}(\mathrm{incrementar}(t)) = \mathrm{sumarLista}(t) + \mathrm{longitud}(t)$.
+   - Expanda $\mathrm{incrementar}(h :: t)$ según la definición.
+   - Aplique `sumarLista` al resultado y use la H.I.
+   - Reagrupe los términos: el $h$ va con $\mathrm{sumarLista}(t)$ y el $1$ va con $\mathrm{longitud}(t)$.
+:::
+
+:::{admonition} Solución
+:class: dropdown
+**Paso base ($l = \mathrm{Nil}$):**
+
+$$
+\mathrm{sumarLista}(\mathrm{incrementar}(\mathrm{Nil})) = \mathrm{sumarLista}(\mathrm{Nil}) = 0 = 0 + 0 = \mathrm{sumarLista}(\mathrm{Nil}) + \mathrm{longitud}(\mathrm{Nil}). \quad\checkmark
+$$
+
+**Paso recursivo ($l = h :: t$):** H.I.: $\mathrm{sumarLista}(\mathrm{incrementar}(t)) = \mathrm{sumarLista}(t) + \mathrm{longitud}(t)$.
+
+$$
+\begin{aligned}
+\mathrm{sumarLista}(\mathrm{incrementar}(h :: t)) &= \mathrm{sumarLista}((h+1) :: \mathrm{incrementar}(t)) &&\text{(def. de incrementar)}\\
+&= (h+1) + \mathrm{sumarLista}(\mathrm{incrementar}(t)) &&\text{(def. de sumarLista)}\\
+&= (h+1) + \mathrm{sumarLista}(t) + \mathrm{longitud}(t) &&\text{(H.I.)}\\
+&= \big(h + \mathrm{sumarLista}(t)\big) + \big(1 + \mathrm{longitud}(t)\big) &&\text{(se reagrupa la suma)}\\
+&= \mathrm{sumarLista}(h :: t) + \mathrm{longitud}(h :: t) &&\text{(def. de sumarLista y de longitud, en sentido inverso)}
+\end{aligned}
+\quad\checkmark
+$$
 :::
 
 ***
