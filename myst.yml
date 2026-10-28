@@ -111,10 +111,14 @@ project:
           children:
             - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion12-FuncionesAltoOrdenI/index.md
               title: Estudio
+            - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion12-FuncionesAltoOrdenI/exercises.md
+              title: Ejercicios
         - title: "Sesión 13: Funciones de alto orden (parte II): listas y colecciones"
           children:
             - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion13-FuncionesAltoOrdenII/index.md
               title: Estudio
+            - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion13-FuncionesAltoOrdenII/exercises.md
+              title: Ejercicios
   github: https://github.com/CyEDBooks/CyED2
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
 site:
