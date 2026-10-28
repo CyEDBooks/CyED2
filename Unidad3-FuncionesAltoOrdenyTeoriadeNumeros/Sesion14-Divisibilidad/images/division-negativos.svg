@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="220" viewBox="0 0 760 220" role="img">
+<title>-14 dividido entre 3: división matemática y operador % de Scala</title>
+<defs><marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0b7189"/></marker><marker id="fn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fb8500"/></marker></defs>
+<rect width="760" height="220" fill="#ffffff"/>
+<text x="380.0" y="28" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="16" fill="#023047" text-anchor="middle" font-weight="bold">a = -14,  d = 3</text>
+<line x1="30" y1="115" x2="490" y2="115" stroke="#49636f" stroke-width="1.4"/>
+<line x1="50.0" y1="110" x2="50.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="50.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-18</text>
+<line x1="85.0" y1="110" x2="85.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="85.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-17</text>
+<line x1="120.0" y1="110" x2="120.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="120.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-16</text>
+<line x1="155.0" y1="110" x2="155.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="155.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-15</text>
+<line x1="190.0" y1="110" x2="190.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="190.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-14</text>
+<line x1="225.0" y1="110" x2="225.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="225.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-13</text>
+<line x1="260.0" y1="110" x2="260.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="260.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-12</text>
+<line x1="295.0" y1="110" x2="295.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="295.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-11</text>
+<line x1="330.0" y1="110" x2="330.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="330.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-10</text>
+<line x1="365.0" y1="110" x2="365.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="365.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-9</text>
+<line x1="400.0" y1="110" x2="400.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="400.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-8</text>
+<line x1="435.0" y1="110" x2="435.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="435.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-7</text>
+<line x1="470.0" y1="110" x2="470.0" y2="120" stroke="#49636f" stroke-width="1.2"/>
+<text x="470.0" y="137" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="11" fill="#49636f" text-anchor="middle" font-weight="normal">-6</text>
+<circle cx="50.0" cy="115" r="7" fill="#e5f5f9" stroke="#0b7189" stroke-width="1.6"/>
+<circle cx="155.0" cy="115" r="7" fill="#e5f5f9" stroke="#0b7189" stroke-width="1.6"/>
+<circle cx="260.0" cy="115" r="7" fill="#e5f5f9" stroke="#0b7189" stroke-width="1.6"/>
+<circle cx="365.0" cy="115" r="7" fill="#e5f5f9" stroke="#0b7189" stroke-width="1.6"/>
+<circle cx="470.0" cy="115" r="7" fill="#e5f5f9" stroke="#0b7189" stroke-width="1.6"/>
+<circle cx="190.0" cy="115" r="7" fill="#023047"/>
+<path d="M155.0,105 Q172.5,65 189.0,104" fill="none" stroke="#0b7189" stroke-width="2" marker-end="url(#fa)"/>
+<text x="172.5" y="77" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="13" fill="#0b7189" text-anchor="middle" font-weight="bold">+1</text>
+<path d="M260.0,145 Q225.0,189 191.0,146" fill="none" stroke="#fb8500" stroke-width="2" marker-end="url(#fn)"/>
+<text x="225.0" y="187" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="13" fill="#a94700" text-anchor="middle" font-weight="bold">-2</text>
+<text x="510" y="73" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="13" fill="#0b7189" text-anchor="start" font-weight="bold">División matemática</text>
+<text x="510" y="93" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="13" fill="#0b7189" text-anchor="start" font-weight="normal">-14 = 3·(-5) + 1</text>
+<text x="510" y="111" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="13" fill="#0b7189" text-anchor="start" font-weight="normal">div = -5,  mod = 1</text>
+<text x="510" y="153" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="13" fill="#a94700" text-anchor="start" font-weight="bold">Scala: / y %</text>
+<text x="510" y="173" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="13" fill="#a94700" text-anchor="start" font-weight="normal">-14 = 3·(-4) + (-2)</text>
+<text x="510" y="191" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="13" fill="#a94700" text-anchor="start" font-weight="normal">/ da -4,  % da -2</text>
+</svg>
