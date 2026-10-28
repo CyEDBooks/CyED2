@@ -105,6 +105,16 @@ project:
           children:
             - file: Unidad2-InduccionRecursividad/Sesion11RecurrenciasDivideYVenceras/index.md
               title: Estudio
+    - title: "Unidad 3: Funciones de alto orden y teoría de números"
+      children:
+        - title: "Sesión 12: Funciones de alto orden (parte I)"
+          children:
+            - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion12-FuncionesAltoOrdenI/index.md
+              title: Estudio
+        - title: "Sesión 13: Funciones de alto orden (parte II): listas y colecciones"
+          children:
+            - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion13-FuncionesAltoOrdenII/index.md
+              title: Estudio
   github: https://github.com/CyEDBooks/CyED2
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
 site:

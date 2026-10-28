@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="360" viewBox="0 0 760 360" role="img">
+<title>List(0, 25, 100).map(c =&gt; c * 9 / 5 + 32)</title>
+<style>
+@keyframes escena{0%{opacity:0}2.5%{opacity:1}96.5%{opacity:1}100%{opacity:0}}.escena{animation:escena 10.40s linear infinite}@media (prefers-reduced-motion: reduce){*{animation:none !important}}
+@keyframes a1{0.0%{transform:translate(345.0px,92.0px);opacity:0}8.558%{transform:translate(345.0px,92.0px);opacity:0}10.096%{transform:translate(345.0px,92.0px);opacity:1}25.481%{transform:translate(345.0px,92.0px);opacity:1}27.404%{transform:translate(345.0px,92.0px);opacity:0}100.0%{transform:translate(345.0px,92.0px);opacity:0}}
+.a1{animation:a1 10.40s ease-in-out infinite}
+@keyframes a2{0.0%{transform:translate(345.0px,92.0px);opacity:0}8.654%{transform:translate(345.0px,92.0px);opacity:0}9.615%{transform:translate(345.0px,92.0px);opacity:1}15.865%{transform:translate(410.0px,188.0px);opacity:1}17.308%{transform:translate(410.0px,188.0px);opacity:0}100.0%{transform:translate(410.0px,188.0px);opacity:0}}
+.a2{animation:a2 10.40s ease-in-out infinite}
+@keyframes a3{0.0%{transform:translate(537.2px,188.0px);opacity:0}15.385%{transform:translate(537.2px,188.0px);opacity:0}16.827%{transform:translate(537.2px,188.0px);opacity:1}26.923%{transform:translate(537.2px,188.0px);opacity:1}28.846%{transform:translate(537.2px,188.0px);opacity:0}100.0%{transform:translate(537.2px,188.0px);opacity:0}}
+.a3{animation:a3 10.40s ease-in-out infinite}
+@keyframes a4{0.0%{transform:translate(410.0px,188.0px);opacity:0}16.827%{transform:translate(410.0px,188.0px);opacity:0}18.269%{transform:translate(410.0px,188.0px);opacity:1}25.0%{transform:translate(345.0px,282.0px);opacity:1}100.0%{transform:translate(345.0px,282.0px);opacity:1}}
+.a4{animation:a4 10.40s ease-in-out infinite}
+@keyframes a5{0.0%{transform:translate(410.0px,92.0px);opacity:0}28.75%{transform:translate(410.0px,92.0px);opacity:0}30.288%{transform:translate(410.0px,92.0px);opacity:1}45.673%{transform:translate(410.0px,92.0px);opacity:1}47.596%{transform:translate(410.0px,92.0px);opacity:0}100.0%{transform:translate(410.0px,92.0px);opacity:0}}
+.a5{animation:a5 10.40s ease-in-out infinite}
+@keyframes a6{0.0%{transform:translate(410.0px,92.0px);opacity:0}28.846%{transform:translate(410.0px,92.0px);opacity:0}29.808%{transform:translate(410.0px,92.0px);opacity:1}36.058%{transform:translate(410.0px,188.0px);opacity:1}37.5%{transform:translate(410.0px,188.0px);opacity:0}100.0%{transform:translate(410.0px,188.0px);opacity:0}}
+.a6{animation:a6 10.40s ease-in-out infinite}
+@keyframes a7{0.0%{transform:translate(537.2px,188.0px);opacity:0}35.577%{transform:translate(537.2px,188.0px);opacity:0}37.019%{transform:translate(537.2px,188.0px);opacity:1}47.115%{transform:translate(537.2px,188.0px);opacity:1}49.038%{transform:translate(537.2px,188.0px);opacity:0}100.0%{transform:translate(537.2px,188.0px);opacity:0}}
+.a7{animation:a7 10.40s ease-in-out infinite}
+@keyframes a8{0.0%{transform:translate(410.0px,188.0px);opacity:0}37.019%{transform:translate(410.0px,188.0px);opacity:0}38.462%{transform:translate(410.0px,188.0px);opacity:1}45.192%{transform:translate(410.0px,282.0px);opacity:1}100.0%{transform:translate(410.0px,282.0px);opacity:1}}
+.a8{animation:a8 10.40s ease-in-out infinite}
+@keyframes a9{0.0%{transform:translate(475.0px,92.0px);opacity:0}48.942%{transform:translate(475.0px,92.0px);opacity:0}50.481%{transform:translate(475.0px,92.0px);opacity:1}65.865%{transform:translate(475.0px,92.0px);opacity:1}67.788%{transform:translate(475.0px,92.0px);opacity:0}100.0%{transform:translate(475.0px,92.0px);opacity:0}}
+.a9{animation:a9 10.40s ease-in-out infinite}
+@keyframes a10{0.0%{transform:translate(475.0px,92.0px);opacity:0}49.038%{transform:translate(475.0px,92.0px);opacity:0}50.0%{transform:translate(475.0px,92.0px);opacity:1}56.25%{transform:translate(410.0px,188.0px);opacity:1}57.692%{transform:translate(410.0px,188.0px);opacity:0}100.0%{transform:translate(410.0px,188.0px);opacity:0}}
+.a10{animation:a10 10.40s ease-in-out infinite}
+@keyframes a11{0.0%{transform:translate(537.2px,188.0px);opacity:0}55.769%{transform:translate(537.2px,188.0px);opacity:0}57.212%{transform:translate(537.2px,188.0px);opacity:1}67.308%{transform:translate(537.2px,188.0px);opacity:1}69.231%{transform:translate(537.2px,188.0px);opacity:0}100.0%{transform:translate(537.2px,188.0px);opacity:0}}
+.a11{animation:a11 10.40s ease-in-out infinite}
+@keyframes a12{0.0%{transform:translate(410.0px,188.0px);opacity:0}57.212%{transform:translate(410.0px,188.0px);opacity:0}58.654%{transform:translate(410.0px,188.0px);opacity:1}65.385%{transform:translate(475.0px,282.0px);opacity:1}100.0%{transform:translate(475.0px,282.0px);opacity:1}}
+.a12{animation:a12 10.40s ease-in-out infinite}
+@keyframes a13{0.0%{transform:translate(380.0px,338.0px);opacity:0}68.269%{transform:translate(380.0px,338.0px);opacity:0}72.115%{transform:translate(380.0px,338.0px);opacity:1}100.0%{transform:translate(380.0px,338.0px);opacity:1}}
+.a13{animation:a13 10.40s ease-in-out infinite}
+</style>
+<rect width="760" height="360" fill="#ffffff"/>
+<g class="escena">
+<text x="380.0" y="36.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="17" fill="#023047" text-anchor="middle" font-weight="normal">List(0, 25, 100).map(c =&gt; c * 9 / 5 + 32)</text>
+<text x="34.0" y="97.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#49636f" text-anchor="start" font-weight="normal">xs</text>
+<text x="18.0" y="287.0" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="13" fill="#49636f" text-anchor="start" font-weight="normal">resultado</text>
+<g transform="translate(410.0,188)"><rect x="-113.2" y="-26.0" width="226.4" height="52" rx="8" fill="#fff8df" stroke="#fb8500" stroke-width="1.6"/><text x="0" y="5.6" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="16" fill="#023047" text-anchor="middle">c =&gt; c * 9 / 5 + 32</text></g>
+<text x="280.8" y="194.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="16" fill="#a94700" text-anchor="middle" font-weight="bold">f</text>
+<g transform="translate(345.0,92)"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#e5f5f9" stroke="#219ebc" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">0</text></g>
+<g transform="translate(345.0,282)"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#ffffff" stroke="#b9d8e5" stroke-width="1.6" stroke-dasharray="5 4"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle"></text></g>
+<g transform="translate(410.0,92)"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#e5f5f9" stroke="#219ebc" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">25</text></g>
+<g transform="translate(410.0,282)"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#ffffff" stroke="#b9d8e5" stroke-width="1.6" stroke-dasharray="5 4"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle"></text></g>
+<g transform="translate(475.0,92)"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#e5f5f9" stroke="#219ebc" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">100</text></g>
+<g transform="translate(475.0,282)"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#ffffff" stroke="#b9d8e5" stroke-width="1.6" stroke-dasharray="5 4"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle"></text></g>
+<g class="a1" style="transform:translate(345.0px,92.0px);opacity:0"><rect x="-29.5" y="-25" width="59.0" height="50" rx="11" fill="none" stroke="#fb8500" stroke-width="3"/></g>
+<g class="a2" style="transform:translate(410.0px,188.0px);opacity:0"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#e5f5f9" stroke="#219ebc" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">0</text></g>
+<g class="a3" style="transform:translate(537.2px,188.0px);opacity:0"><text x="0.0" y="5.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#a94700" text-anchor="start" font-weight="normal">0*9/5+32 = 32</text></g>
+<g class="a4" style="transform:translate(345.0px,282.0px);opacity:1"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#ffe8d1" stroke="#fb8500" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">32</text></g>
+<g class="a5" style="transform:translate(410.0px,92.0px);opacity:0"><rect x="-29.5" y="-25" width="59.0" height="50" rx="11" fill="none" stroke="#fb8500" stroke-width="3"/></g>
+<g class="a6" style="transform:translate(410.0px,188.0px);opacity:0"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#e5f5f9" stroke="#219ebc" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">25</text></g>
+<g class="a7" style="transform:translate(537.2px,188.0px);opacity:0"><text x="0.0" y="5.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#a94700" text-anchor="start" font-weight="normal">25*9/5+32 = 77</text></g>
+<g class="a8" style="transform:translate(410.0px,282.0px);opacity:1"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#ffe8d1" stroke="#fb8500" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">77</text></g>
+<g class="a9" style="transform:translate(475.0px,92.0px);opacity:0"><rect x="-29.5" y="-25" width="59.0" height="50" rx="11" fill="none" stroke="#fb8500" stroke-width="3"/></g>
+<g class="a10" style="transform:translate(410.0px,188.0px);opacity:0"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#e5f5f9" stroke="#219ebc" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">100</text></g>
+<g class="a11" style="transform:translate(537.2px,188.0px);opacity:0"><text x="0.0" y="5.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#a94700" text-anchor="start" font-weight="normal">100*9/5+32 = 212</text></g>
+<g class="a12" style="transform:translate(475.0px,282.0px);opacity:1"><rect x="-24.5" y="-20.0" width="49.0" height="40" rx="8" fill="#ffe8d1" stroke="#fb8500" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">212</text></g>
+<g class="a13" style="transform:translate(380.0px,338.0px);opacity:1"><text x="0.0" y="0.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="17" fill="#0b7189" text-anchor="middle" font-weight="bold">= List(32, 77, 212)</text></g>
+</g>
+</svg>

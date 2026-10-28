@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430" role="img">
+<title>List(1, 2, 3).foldRight(0)(_ + _)</title>
+<style>
+@keyframes escena{0%{opacity:0}2.5%{opacity:1}96.5%{opacity:1}100%{opacity:0}}.escena{animation:escena 15.00s linear infinite}@media (prefers-reduced-motion: reduce){*{animation:none !important}}
+@keyframes a1{0.0%{transform:translate(70.0px,148.0px);opacity:0}5.333%{transform:translate(70.0px,148.0px);opacity:0}8.667%{transform:translate(70.0px,160.0px);opacity:1}100.0%{transform:translate(70.0px,160.0px);opacity:1}}
+.a1{animation:a1 15.00s ease-in-out infinite}
+@keyframes a2{0.0%{transform:translate(356.0px,92.0px);opacity:0}5.267%{transform:translate(356.0px,92.0px);opacity:0}6.333%{transform:translate(356.0px,92.0px);opacity:1}12.0%{transform:translate(356.0px,92.0px);opacity:1}13.333%{transform:translate(356.0px,92.0px);opacity:0}100.0%{transform:translate(356.0px,92.0px);opacity:0}}
+.a2{animation:a2 15.00s ease-in-out infinite}
+@keyframes a3{0.0%{transform:translate(108.0px,198.0px);opacity:0}14.0%{transform:translate(108.0px,198.0px);opacity:0}17.333%{transform:translate(108.0px,210.0px);opacity:1}100.0%{transform:translate(108.0px,210.0px);opacity:1}}
+.a3{animation:a3 15.00s ease-in-out infinite}
+@keyframes a4{0.0%{transform:translate(420.0px,92.0px);opacity:0}13.933%{transform:translate(420.0px,92.0px);opacity:0}15.0%{transform:translate(420.0px,92.0px);opacity:1}20.667%{transform:translate(420.0px,92.0px);opacity:1}22.0%{transform:translate(420.0px,92.0px);opacity:0}100.0%{transform:translate(420.0px,92.0px);opacity:0}}
+.a4{animation:a4 15.00s ease-in-out infinite}
+@keyframes a5{0.0%{transform:translate(146.0px,248.0px);opacity:0}22.667%{transform:translate(146.0px,248.0px);opacity:0}26.0%{transform:translate(146.0px,260.0px);opacity:1}100.0%{transform:translate(146.0px,260.0px);opacity:1}}
+.a5{animation:a5 15.00s ease-in-out infinite}
+@keyframes a6{0.0%{transform:translate(484.0px,92.0px);opacity:0}22.6%{transform:translate(484.0px,92.0px);opacity:0}23.667%{transform:translate(484.0px,92.0px);opacity:1}29.333%{transform:translate(484.0px,92.0px);opacity:1}30.667%{transform:translate(484.0px,92.0px);opacity:0}100.0%{transform:translate(484.0px,92.0px);opacity:0}}
+.a6{animation:a6 15.00s ease-in-out infinite}
+@keyframes a7{0.0%{transform:translate(184.0px,298.0px);opacity:0}27.333%{transform:translate(184.0px,298.0px);opacity:0}30.667%{transform:translate(184.0px,310.0px);opacity:1}100.0%{transform:translate(184.0px,310.0px);opacity:1}}
+.a7{animation:a7 15.00s ease-in-out infinite}
+@keyframes a8{0.0%{transform:translate(294.0px,310.0px);opacity:0}30.667%{transform:translate(294.0px,310.0px);opacity:0}32.667%{transform:translate(294.0px,310.0px);opacity:1}100.0%{transform:translate(294.0px,310.0px);opacity:1}}
+.a8{animation:a8 15.00s ease-in-out infinite}
+@keyframes a9{0.0%{transform:translate(18.0px,378.0px);opacity:0}2.667%{transform:translate(18.0px,378.0px);opacity:0}4.667%{transform:translate(18.0px,378.0px);opacity:1}34.0%{transform:translate(18.0px,378.0px);opacity:1}36.0%{transform:translate(18.0px,378.0px);opacity:0}100.0%{transform:translate(18.0px,378.0px);opacity:0}}
+.a9{animation:a9 15.00s ease-in-out infinite}
+@keyframes a10{0.0%{transform:translate(18.0px,378.0px);opacity:0}35.333%{transform:translate(18.0px,378.0px);opacity:0}37.333%{transform:translate(18.0px,378.0px);opacity:1}100.0%{transform:translate(18.0px,378.0px);opacity:1}}
+.a10{animation:a10 15.00s ease-in-out infinite}
+@keyframes a11{0.0%{transform:translate(294.0px,310.0px);opacity:0}37.333%{transform:translate(294.0px,310.0px);opacity:0}38.0%{transform:translate(294.0px,310.0px);opacity:1}42.667%{transform:translate(220.0px,260.0px);opacity:1}100.0%{transform:translate(220.0px,260.0px);opacity:1}}
+.a11{animation:a11 15.00s ease-in-out infinite}
+@keyframes a12{0.0%{transform:translate(254.0px,260.0px);opacity:0}43.333%{transform:translate(254.0px,260.0px);opacity:0}45.0%{transform:translate(254.0px,260.0px);opacity:1}100.0%{transform:translate(254.0px,260.0px);opacity:1}}
+.a12{animation:a12 15.00s ease-in-out infinite}
+@keyframes a13{0.0%{transform:translate(285.0px,260.0px);opacity:0}50.667%{transform:translate(285.0px,260.0px);opacity:0}51.333%{transform:translate(285.0px,260.0px);opacity:1}56.0%{transform:translate(182.0px,210.0px);opacity:1}100.0%{transform:translate(182.0px,210.0px);opacity:1}}
+.a13{animation:a13 15.00s ease-in-out infinite}
+@keyframes a14{0.0%{transform:translate(216.0px,210.0px);opacity:0}56.667%{transform:translate(216.0px,210.0px);opacity:0}58.333%{transform:translate(216.0px,210.0px);opacity:1}100.0%{transform:translate(216.0px,210.0px);opacity:1}}
+.a14{animation:a14 15.00s ease-in-out infinite}
+@keyframes a15{0.0%{transform:translate(247.0px,210.0px);opacity:0}64.0%{transform:translate(247.0px,210.0px);opacity:0}64.667%{transform:translate(247.0px,210.0px);opacity:1}69.333%{transform:translate(144.0px,160.0px);opacity:1}100.0%{transform:translate(144.0px,160.0px);opacity:1}}
+.a15{animation:a15 15.00s ease-in-out infinite}
+@keyframes a16{0.0%{transform:translate(178.0px,160.0px);opacity:0}70.0%{transform:translate(178.0px,160.0px);opacity:0}71.667%{transform:translate(178.0px,160.0px);opacity:1}100.0%{transform:translate(178.0px,160.0px);opacity:1}}
+.a16{animation:a16 15.00s ease-in-out infinite}
+@keyframes a17{0.0%{transform:translate(380.0px,412.0px);opacity:0}76.667%{transform:translate(380.0px,412.0px);opacity:0}79.333%{transform:translate(380.0px,412.0px);opacity:1}100.0%{transform:translate(380.0px,412.0px);opacity:1}}
+.a17{animation:a17 15.00s ease-in-out infinite}
+</style>
+<rect width="760" height="430" fill="#ffffff"/>
+<g class="escena">
+<text x="380.0" y="36.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="17" fill="#023047" text-anchor="middle" font-weight="normal">List(1, 2, 3).foldRight(0)(_ + _)</text>
+<text x="34.0" y="97.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#49636f" text-anchor="start" font-weight="normal">xs</text>
+<g transform="translate(356.0,92)"><rect x="-24.0" y="-20.0" width="48.0" height="40" rx="8" fill="#e5f5f9" stroke="#219ebc" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">1</text></g>
+<g transform="translate(420.0,92)"><rect x="-24.0" y="-20.0" width="48.0" height="40" rx="8" fill="#e5f5f9" stroke="#219ebc" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">2</text></g>
+<g transform="translate(484.0,92)"><rect x="-24.0" y="-20.0" width="48.0" height="40" rx="8" fill="#e5f5f9" stroke="#219ebc" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">3</text></g>
+<text x="18.0" y="132.0" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="13" fill="#49636f" text-anchor="start" font-weight="normal">llamadas pendientes</text>
+<g class="a1" style="transform:translate(70.0px,160.0px);opacity:1"><rect x="0" y="-22" width="162.0" height="44" rx="9" fill="#f2f9fc" stroke="#b9d8e5" stroke-width="1.5"/><text x="14.0" y="5.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="start" font-weight="normal">1 + </text><rect x="50.0" y="-17" width="48.0" height="34" rx="7" fill="#ffffff" stroke="#fb8500" stroke-width="1.5" stroke-dasharray="5 4"/></g>
+<g class="a2" style="transform:translate(356.0px,92.0px);opacity:0"><rect x="-29.0" y="-25" width="58.0" height="50" rx="11" fill="none" stroke="#fb8500" stroke-width="3"/></g>
+<g class="a3" style="transform:translate(108.0px,210.0px);opacity:1"><rect x="0" y="-22" width="162.0" height="44" rx="9" fill="#f2f9fc" stroke="#b9d8e5" stroke-width="1.5"/><text x="14.0" y="5.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="start" font-weight="normal">2 + </text><rect x="50.0" y="-17" width="48.0" height="34" rx="7" fill="#ffffff" stroke="#fb8500" stroke-width="1.5" stroke-dasharray="5 4"/></g>
+<g class="a4" style="transform:translate(420.0px,92.0px);opacity:0"><rect x="-29.0" y="-25" width="58.0" height="50" rx="11" fill="none" stroke="#fb8500" stroke-width="3"/></g>
+<g class="a5" style="transform:translate(146.0px,260.0px);opacity:1"><rect x="0" y="-22" width="162.0" height="44" rx="9" fill="#f2f9fc" stroke="#b9d8e5" stroke-width="1.5"/><text x="14.0" y="5.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="start" font-weight="normal">3 + </text><rect x="50.0" y="-17" width="48.0" height="34" rx="7" fill="#ffffff" stroke="#fb8500" stroke-width="1.5" stroke-dasharray="5 4"/></g>
+<g class="a6" style="transform:translate(484.0px,92.0px);opacity:0"><rect x="-29.0" y="-25" width="58.0" height="50" rx="11" fill="none" stroke="#fb8500" stroke-width="3"/></g>
+<g class="a7" style="transform:translate(184.0px,310.0px);opacity:1"><rect x="0" y="-22" width="154.0" height="44" rx="9" fill="#fff8df" stroke="#fb8500" stroke-width="1.5"/><text x="14.0" y="5.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="start" font-weight="normal">Nil  →  </text></g>
+<g class="a8" style="transform:translate(294.0px,310.0px);opacity:1"><rect x="-24.0" y="-17.0" width="48.0" height="34" rx="8" fill="#e5f5f9" stroke="#0b7189" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">0</text></g>
+<g class="a9" style="transform:translate(18.0px,378.0px);opacity:0"><text x="0.0" y="0.0" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="13" fill="#49636f" text-anchor="start" font-weight="normal">1. Bajada: cada elemento queda esperando el resultado de la cola</text></g>
+<g class="a10" style="transform:translate(18.0px,378.0px);opacity:1"><text x="0.0" y="0.0" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="13" fill="#a94700" text-anchor="start" font-weight="normal">2. Subida: los resultados se combinan desde la derecha</text></g>
+<g class="a11" style="transform:translate(220.0px,260.0px);opacity:1"><rect x="-24.0" y="-17.0" width="48.0" height="34" rx="8" fill="#e5f5f9" stroke="#0b7189" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">0</text></g>
+<g class="a12" style="transform:translate(254.0px,260.0px);opacity:1"><text x="0.0" y="5.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#a94700" text-anchor="start" font-weight="bold">= 3</text></g>
+<g class="a13" style="transform:translate(182.0px,210.0px);opacity:1"><rect x="-24.0" y="-17.0" width="48.0" height="34" rx="8" fill="#e5f5f9" stroke="#0b7189" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">3</text></g>
+<g class="a14" style="transform:translate(216.0px,210.0px);opacity:1"><text x="0.0" y="5.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#a94700" text-anchor="start" font-weight="bold">= 5</text></g>
+<g class="a15" style="transform:translate(144.0px,160.0px);opacity:1"><rect x="-24.0" y="-17.0" width="48.0" height="34" rx="8" fill="#e5f5f9" stroke="#0b7189" stroke-width="1.6"/><text x="0" y="5.2" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle">5</text></g>
+<g class="a16" style="transform:translate(178.0px,160.0px);opacity:1"><text x="0.0" y="5.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#a94700" text-anchor="start" font-weight="bold">= 6</text></g>
+<g class="a17" style="transform:translate(380.0px,412.0px);opacity:1"><text x="0.0" y="0.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="17" fill="#0b7189" text-anchor="middle" font-weight="bold">= 6</text></g>
+</g>
+</svg>

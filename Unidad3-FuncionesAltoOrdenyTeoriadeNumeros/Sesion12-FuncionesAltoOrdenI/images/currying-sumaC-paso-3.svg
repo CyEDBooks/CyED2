@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="250" viewBox="0 0 800 250" role="img">
+<title>Currying de sumaC, paso 3</title>
+<defs><marker id="mg" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#49636f"/></marker><marker id="mo" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb8500"/></marker></defs>
+<rect width="800" height="250" fill="#ffffff"/>
+<text x="400.0" y="30.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="16" fill="#023047" text-anchor="middle" font-weight="normal">sumaC(3)(4)  =  g3(4)</text>
+<line x1="30.0" y1="100.0" x2="88.0" y2="100.0" stroke="#49636f" stroke-width="2" marker-end="url(#mg)"/><text x="59.0" y="90.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle" font-weight="bold">3</text>
+<g opacity="0.45"><rect x="90.0" y="66" width="220.0" height="68" rx="12" fill="#e5f5f9" stroke="#0b7189" stroke-width="2"/><text x="200.0" y="92.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#0b7189" text-anchor="middle" font-weight="bold">sumaC</text><text x="200.0" y="118.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle" font-weight="normal">a =&gt; (b =&gt; a + b)</text></g>
+<text x="200.0" y="160.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="13" fill="#49636f" text-anchor="middle" font-weight="normal">Int =&gt; (Int =&gt; Int)</text>
+<line x1="312.0" y1="100.0" x2="378.0" y2="100.0" stroke="#49636f" stroke-width="2" marker-end="url(#mg)"/>
+<g><rect x="380.0" y="66" width="240.0" height="68" rx="12" fill="#e5f5f9" stroke="#0b7189" stroke-width="2"/><text x="500.0" y="92.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#0b7189" text-anchor="middle" font-weight="bold">g3 = sumaC(3)</text><text x="500.0" y="118.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#023047" text-anchor="middle" font-weight="normal">b =&gt; 3 + b</text></g>
+<text x="500.0" y="160.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="13" fill="#49636f" text-anchor="middle" font-weight="normal">Int =&gt; Int</text>
+<line x1="580.0" y1="225.0" x2="580.0" y2="136.0" stroke="#fb8500" stroke-width="2" marker-end="url(#mo)"/>
+<text x="596.0" y="222.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="15" fill="#a94700" text-anchor="middle" font-weight="bold">4</text>
+</svg>
