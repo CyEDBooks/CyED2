@@ -119,10 +119,24 @@ project:
               title: Estudio
             - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion13-FuncionesAltoOrdenII/exercises.md
               title: Ejercicios
-        - title: "Sesión 14: Divisibilidad y módulo"
+        - title: "Sesión 14: Divisibilidad y factorización prima"
           children:
             - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion14-Divisibilidad/index.md
               title: Estudio
+            - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion14-Divisibilidad/exercises.md
+              title: Ejercicios
+        - title: "Sesión 15: Aritmética modular y congruencias lineales"
+          children:
+            - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion15-CongruenciasLineales/index.md
+              title: Estudio
+            - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion15-CongruenciasLineales/exercises.md
+              title: Ejercicios
+        - title: "Sesión 16: Algoritmo de Euclides"
+          children:
+            - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion16-AlgoritmoEuclides/index.md
+              title: Estudio
+            - file: Unidad3-FuncionesAltoOrdenyTeoriadeNumeros/Sesion16-AlgoritmoEuclides/exercises.md
+              title: Ejercicios
   github: https://github.com/CyEDBooks/CyED2
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
 site:

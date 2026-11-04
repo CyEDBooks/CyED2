@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="326" viewBox="0 0 640 326" role="img">
+<title>Algoritmo de Euclides sobre un rectángulo de 12 por 8, paso 4</title>
+<rect width="640" height="326" fill="#ffffff"/>
+<text x="320" y="36" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="16" fill="#023047" text-anchor="middle" font-weight="bold">Rectángulo de 12 × 8</text>
+<rect x="164" y="70" width="104" height="104" fill="#fff8df" stroke="#fb8500" stroke-width="2.2"/><text x="216.0" y="128.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="16" fill="#023047" text-anchor="middle" font-weight="bold">4</text>
+<rect x="164" y="174" width="104" height="104" fill="#fff8df" stroke="#fb8500" stroke-width="2.2"/><text x="216.0" y="232.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="16" fill="#023047" text-anchor="middle" font-weight="bold">4</text>
+<rect x="268" y="70" width="104" height="104" fill="#fff8df" stroke="#fb8500" stroke-width="2.2"/><text x="320.0" y="128.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="16" fill="#023047" text-anchor="middle" font-weight="bold">4</text>
+<rect x="268" y="174" width="104" height="104" fill="#fff8df" stroke="#fb8500" stroke-width="2.2"/><text x="320.0" y="232.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="16" fill="#023047" text-anchor="middle" font-weight="bold">4</text>
+<rect x="372" y="70" width="104" height="104" fill="#fff8df" stroke="#fb8500" stroke-width="2.2"/><text x="424.0" y="128.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="16" fill="#023047" text-anchor="middle" font-weight="bold">4</text>
+<rect x="372" y="174" width="104" height="104" fill="#fff8df" stroke="#fb8500" stroke-width="2.2"/><text x="424.0" y="232.0" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="16" fill="#023047" text-anchor="middle" font-weight="bold">4</text>
+<text x="320" y="306" font-family="DejaVu Sans Mono, Consolas, Menlo, monospace" font-size="14" fill="#0b7189" text-anchor="middle" font-weight="bold">mcd(12, 8) = 4: el cuadrado de 4 cubre todo el rectángulo</text>
+</svg>
