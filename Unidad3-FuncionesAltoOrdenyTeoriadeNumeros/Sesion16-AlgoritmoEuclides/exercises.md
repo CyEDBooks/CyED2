@@ -108,7 +108,7 @@ Encuentre el inverso de 11 módulo 26 y de 17 módulo 26 con Euclides. Exprese c
 
 :::{admonition} Pistas y solución general
 :class: dropdown
-**Pistas.** El primero está en el ejemplo 2 de la sección 7. Si el coeficiente es negativo, sume 26.
+**Pistas.** Aplique la fórmula de la sección 6. Si el coeficiente es negativo, sume 26.
 
 **Solución general.** $\overline{11} = -7 \equiv 19$ y $\overline{17} = -3 \equiv 23 \pmod{26}$.
 :::
@@ -119,12 +119,49 @@ Resuelva $17x \equiv 9 \pmod{26}$ y $235x \equiv 3 \pmod{37}$.
 
 :::{admonition} Pistas y solución general
 :class: dropdown
-**Pistas.** Use los inversos que ya conoce: el del ejercicio 9 y el de la sección 6.
+**Pistas.** Use los inversos que ya conoce: el del ejercicio 9 y el del ejemplo 5 de la sección 6.
 
 **Solución general.** $x \equiv 23 \cdot 9 = 207 \equiv 25 \pmod{26}$, y $x \equiv -17 \cdot 3 = -51 \equiv 23 \pmod{37}$.
 :::
 
 ## Ejercicio 11
+
+Demuestre la cancelación: si $ca \equiv cb \pmod{m}$ y $\text{mcd}(c, m) = 1$, entonces $a \equiv b \pmod{m}$. Dé un contraejemplo cuando $\text{mcd}(c, m) \neq 1$.
+
+:::{admonition} Pistas y solución general
+:class: dropdown
+**Pistas.** Multiplique ambos lados por $\overline{c}$.
+
+**Solución general.** $\overline{c}ca \equiv \overline{c}cb$ da $a \equiv b$. Contraejemplo: $2 \cdot 7 \equiv 2 \cdot 4 \pmod{6}$, pero $7 \not\equiv 4 \pmod{6}$.
+:::
+
+## Ejercicio 12
+
+Sin resolver, diga cuántas soluciones módulo $m$ tiene cada congruencia. Después, resuelva las que tengan.
+
+1. $4x \equiv 6 \pmod{10}$
+2. $4x \equiv 7 \pmod{10}$
+3. $12x \equiv 18 \pmod{30}$
+
+:::{admonition} Pistas y solución general
+:class: dropdown
+**Pistas.** Use el teorema 3. Divida todo entre el mcd antes de buscar el inverso.
+
+**Solución general.** 1: $d = 2$ y $2 \mid 6$, así que hay 2 soluciones: $x \equiv 4, 9 \pmod{10}$. 2: $d = 2$ y $2 \nmid 7$: ninguna. 3: $d = 6$ y $6 \mid 18$: 6 soluciones; $2x \equiv 3 \pmod{5}$ da $x \equiv 4 \pmod{5}$, y módulo 30 son $4, 9, 14, 19, 24, 29$.
+:::
+
+## Ejercicio 13
+
+Para el cifrado $c = (5p + 8) \;\mathbf{mod}\; 26$ de la Sesión 15, escriba la fórmula para descifrar y úsela con `UAL`.
+
+:::{admonition} Pistas y solución general
+:class: dropdown
+**Pistas.** $\text{mcd}(5, 26) = 1$. Encuentre el inverso de 5 con la fórmula de la sección 6.
+
+**Solución general.** $\overline{5} = 21$, así que $p \equiv 21(c - 8) \pmod{26}$. `UAL` se descifra como `SOL`.
+:::
+
+## Ejercicio 14
 
 Escriba `mcdTraza(a: Long, b: Long): List[(Long, Long, Long, Long)]`, que retorne la lista de cuádruplas $(a, b, q, r)$ de cada división, sin variables mutables.
 
@@ -135,7 +172,7 @@ Escriba `mcdTraza(a: Long, b: Long): List[(Long, Long, Long, Long)]`, que retorn
 **Solución general.** Con `b == 0` retorna `Nil`. En otro caso, `(a, b, a / b, a % b) :: mcdTraza(b, a % b)`. Con $(287, 91)$ retorna tres cuádruplas.
 :::
 
-## Ejercicio 12
+## Ejercicio 15
 
 Escriba `mcdLista(xs: List[Long]): Long`, que calcule el mcd de una lista no vacía con un método de alto orden.
 
@@ -146,6 +183,6 @@ Escriba `mcdLista(xs: List[Long]): Long`, que calcule el mcd de una lista no vac
 **Solución general.** `xs.reduceLeft(mcd)`. Con `List(12, 18, 30)` retorna 6.
 :::
 
-## Ejercicio 13
+## Ejercicio 16
 
 Encuentre el inverso de 9 módulo 32.

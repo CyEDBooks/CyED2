@@ -15,9 +15,11 @@ title: "Unidad 3 · Sesión 16: Algoritmo de Euclides"
 4. Simplificar fracciones
 5. Combinación lineal
 6. El inverso de $a$ módulo $m$
-7. Congruencias lineales con módulos grandes
+7. Resolver con el inverso
+8. Cuando $\text{mcd}(a, m) \neq 1$
+9. Congruencias lineales con módulos grandes
 
-En la [Sesión 14](../Sesion14-Divisibilidad/index.md) calculamos el mcd con factorizaciones, y en la [Sesión 15](../Sesion15-CongruenciasLineales/index.md) encontramos inversos probando. Esta sesión reemplaza los dos procedimientos por uno solo. Las trazas largas están en desplegables con pestañas **Paso 1, Paso 2, …**.
+En la [Sesión 14](../Sesion14-Divisibilidad/index.md) calculamos el mcd con factorizaciones, y en la [Sesión 15](../Sesion15-CongruenciasLineales/index.md) resolvimos congruencias lineales probando valores. Esta sesión reemplaza los dos procedimientos por uno solo. Las trazas largas están en desplegables con pestañas **Paso 1, Paso 2, …**.
 
 ## 1. El mcd sin factorizar
 
@@ -701,14 +703,57 @@ Es la versión general del criterio del 6 de la Sesión 14, con $a = 2$ y $b = 3
 
 ## 6. El inverso de $a$ módulo $m$
 
-**Encuentre el inverso de 3 módulo 7, sin hacer la tabla.**
+**Para resolver $3x = 4$ en los reales, se multiplica por $\frac{1}{3}$. Módulo 7 no hay fracciones. ¿Qué entero, multiplicado por 3, da 1 módulo 7?**
 
 :::{admonition} Respuesta
 :class: dropdown
-Queremos $\overline{3} \cdot 3 \equiv 1 \pmod{7}$. La combinación lineal da eso directamente: si $1 = 3s + 7t$, al reducir módulo 7 el término $7t$ desaparece y queda $3s \equiv 1 \pmod{7}$.
+Uno de ellos es $-2$. Se puede verificar: $(-2) \cdot 3 = -6 \equiv 1 \pmod{7}$.
 :::
 
-**Método.** Calcule $\text{mcd}(a, m)$, que debe ser 1. Exprese $1 = a \cdot s + m \cdot t$. El coeficiente que acompaña a $a$, es decir $s$, es el inverso de $a$ módulo $m$.
+:::{admonition} Definición
+Dado $a$ módulo $m$, su **inverso** se denota como $\overline{a}$. Se cumple que
+
+$$
+\overline{a} \cdot a \equiv 1 \pmod{m}
+$$
+:::
+
+Para 3 módulo 7 se tiene $\overline{3} = -2$.
+
+**¿Todo número tiene inverso? Calcule los múltiplos de 3 módulo 7 y los de 2 módulo 8. ¿Aparece el 1?**
+
+:::{admonition} Respuesta
+:class: dropdown
+| $c$ | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|---|---|
+| $3c \;\mathbf{mod}\; 7$ | 0 | 3 | 6 | 2 | 5 | **1** | 4 | |
+| $2c \;\mathbf{mod}\; 8$ | 0 | 2 | 4 | 6 | 0 | 2 | 4 | 6 |
+
+Módulo 7 aparece: $3 \cdot 5 \equiv 1$, y $5 \equiv -2 \pmod{7}$. Módulo 8, nunca: los múltiplos de 2 solo pasan por los pares. 2 no tiene inverso módulo 8, y $\text{mcd}(2, 8) = 2$.
+:::
+
+Cada fila es una vuelta alrededor de un reloj de $m$ posiciones, dando saltos de tamaño $a$. Con saltos de 3 sobre 7 posiciones se visitan todas, incluida la del 1. Con saltos de 2 sobre 8 se visitan solo los pares.
+
+![Dos relojes. A la izquierda, módulo 7 con saltos de 3: el recorrido 0, 3, 6, 2, 5, 1, 4 visita los siete residuos. A la derecha, módulo 8 con saltos de 2: el recorrido 0, 2, 4, 6 solo visita los pares](images/saltos-mod.svg)
+
+Solo existe un inverso si $\text{mcd}(a, m) = 1$. Para encontrarlo se usa la combinación lineal de la sección 5.
+
+:::{admonition} Fórmula del inverso
+Para encontrar $\overline{a}$:
+
+1. Calcule $\text{mcd}(a, m)$. Debe ser 1.
+2. Exprese $\text{mcd}(a, m) = 1$ como una combinación lineal:
+
+   $$
+   1 = a \cdot (s) + m \cdot (t)
+   $$
+
+3. El coeficiente que acompaña a $a$, es decir $s$, es el inverso:
+
+   $$
+   \overline{a} = s
+   $$
+:::
 
 :::::{admonition} Traza del inverso de 3 módulo 7
 :class: dropdown
@@ -720,7 +765,7 @@ Queremos $\overline{3} \cdot 3 \equiv 1 \pmod{7}$. La combinación lineal da eso
 3 = 1 · 3 + 0
 ```
 
-> Se verifica que $\text{mcd}(7, 3) = 1$: el inverso existe.
+> Se verifica que $\text{mcd}(7, 3) = 1$. **¿Qué sigue?**
 
 :::
 :::{tab-item} Paso 2
@@ -731,7 +776,7 @@ Queremos $\overline{3} \cdot 3 \equiv 1 \pmod{7}$. La combinación lineal da eso
 1 = 7 - 3 · 2
 ```
 
-> Ahora se expresa como combinación lineal.
+> Ahora se expresa como combinación lineal: se despeja el residuo.
 
 :::
 :::{tab-item} Paso 3
@@ -743,7 +788,7 @@ Queremos $\overline{3} \cdot 3 \equiv 1 \pmod{7}$. La combinación lineal da eso
 1 = 3 · (-2) + 7 · (1)
 ```
 
-> **¿Cuál coeficiente es el inverso de 3 módulo 7?**
+> Queda en la forma $1 = a \cdot (s) + m \cdot (t)$, con $a = 3$ y $m = 7$. **¿Cuál es el coeficiente que acompaña a 3?**
 
 :::
 :::{tab-item} Paso 4
@@ -753,51 +798,227 @@ Queremos $\overline{3} \cdot 3 \equiv 1 \pmod{7}$. La combinación lineal da eso
 3 = 1 · 3 + 0
 1 = 7 - 3 · 2
 1 = 3 · (-2) + 7 · (1)
-inverso de 3 módulo 7 = -2
+inverso de 3 mod 7 = -2
 ```
 
-> Se puede verificar: $(-2) \cdot 3 = -6 \equiv 1 \pmod{7}$. Y $-2 \equiv 5 \pmod{7}$, el valor de la tabla de la Sesión 15.
+> $\overline{3} = -2$. Se puede verificar: $(-2) \cdot 3 \equiv 1 \pmod{7}$, porque $-6 = 7 \cdot (-1) + 1$.
 
 :::
 ::::
 :::::
 
-La misma combinación $1 = 3 \cdot (-2) + 7 \cdot (1)$ responde otra pregunta: **¿cuál es el inverso de 7 módulo 3?** Es 1, el coeficiente que acompaña al 7. Se verifica con $7 \cdot 1 = 7 \equiv 1 \pmod{3}$.
-
-Aquí se cierra lo que quedó pendiente en el teorema 3 de la Sesión 15. Si $\text{mcd}(a, m) = 1$, el teorema 1 da $s$ y $t$, y $s$ es el inverso. Esta vez no solo sabemos que existe: tenemos con qué calcularlo.
-
-En Scala, normalizando al residuo entre $0$ y $m - 1$:
-
-```scala
-def inversoEuclides(a: Long, m: Long): Option[Long] = {
-  val (g, s, _) = bezout(a, m)
-  if (g == 1) Some(Math.floorMod(s, m)) else None
-}
-
-inversoEuclides(3, 7)   // Some(5)
-inversoEuclides(6, 9)   // None
-```
-
 ### 6.1 Ejemplos
 
 #### Ejemplo 1
 
-Encuentre el inverso en cada caso.
-
-1. $5$ módulo $7$
-2. $3$ módulo $17$
+Encuentre el inverso de 7 módulo 3.
 
 :::{admonition} Resultado
 :class: dropdown
-| | Divisiones | Combinación lineal | Inverso |
-|---|---|---|---|
-| 5 módulo 7 | $7 = 5 \cdot 1 + 2$; $\;5 = 2 \cdot 2 + 1$; $\;2 = 1 \cdot 2 + 0$ | $1 = 5 \cdot (3) + 7 \cdot (-2)$ | 3 |
-| 3 módulo 17 | $17 = 3 \cdot 5 + 2$; $\;3 = 2 \cdot 1 + 1$; $\;2 = 1 \cdot 2 + 0$ | $1 = 3 \cdot (6) + 17 \cdot (-1)$ | 6 |
+Son los dos números de la traza anterior, y la combinación lineal es la misma:
+
+$$
+1 = 3 \cdot (-2) + 7 \cdot (1)
+$$
+
+Ahora $a = 7$, y el coeficiente que acompaña a 7 es 1. El inverso de 7 módulo 3 es 1. Se puede verificar: $1 \cdot 7 = 7 \equiv 1 \pmod{3}$.
 :::
 
 #### Ejemplo 2
 
-Encuentre el inverso de 7 módulo 26. Es el que necesitamos para descifrar en el ejercicio 3 de la sección 7 de la Sesión 15.
+Encuentre el inverso de 5 módulo 7.
+
+:::::{admonition} Resultado
+:class: dropdown
+::::{tab-set}
+:::{tab-item} Paso 1
+```{code-block} text
+:emphasize-lines: 1, 2, 3
+7 = 5 · 1 + 2
+5 = 2 · 2 + 1
+2 = 1 · 2 + 0
+```
+
+> Se verifica que $\text{mcd}(5, 7) = 1$. Ahora se expresa como combinación lineal.
+
+:::
+:::{tab-item} Paso 2
+```{code-block} text
+:emphasize-lines: 1, 2
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+```
+
+> Se despejan los residuos. La última ecuación tiene al mcd.
+
+:::
+:::{tab-item} Paso 3
+```{code-block} text
+:emphasize-lines: 3
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+```
+
+> Se reemplaza el 2.
+
+:::
+:::{tab-item} Paso 4
+```{code-block} text
+:emphasize-lines: 4
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+1 = 5 - 7 · 2 + 5 · 2
+```
+
+> Se quitan los paréntesis.
+
+:::
+:::{tab-item} Paso 5
+```{code-block} text
+:emphasize-lines: 5
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+1 = 5 - 7 · 2 + 5 · 2
+1 = 5 · 3 - 7 · 2
+```
+
+> Se agrupa el 5.
+
+:::
+:::{tab-item} Paso 6
+```{code-block} text
+:emphasize-lines: 6
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+1 = 5 - 7 · 2 + 5 · 2
+1 = 5 · 3 - 7 · 2
+1 = 5 · (3) + 7 · (-2)
+```
+
+> **¿Cuál es el coeficiente que acompaña a 5?**
+
+:::
+:::{tab-item} Paso 7
+```{code-block} text
+:emphasize-lines: 7
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+1 = 5 - 7 · 2 + 5 · 2
+1 = 5 · 3 - 7 · 2
+1 = 5 · (3) + 7 · (-2)
+inverso de 5 mod 7 = 3
+```
+
+> $\overline{5} = 3$. Se puede verificar: $3 \cdot 5 = 15 \equiv 1 \pmod{7}$.
+
+:::
+::::
+:::::
+
+#### Ejemplo 3
+
+Encuentre el inverso de 3 módulo 17.
+
+:::::{admonition} Resultado
+:class: dropdown
+::::{tab-set}
+:::{tab-item} Paso 1
+```{code-block} text
+:emphasize-lines: 1, 2, 3
+17 = 3 · 5 + 2
+ 3 = 2 · 1 + 1
+ 2 = 1 · 2 + 0
+```
+
+> Se verifica que $\text{mcd}(3, 17) = 1$. Ahora se expresa como combinación lineal.
+
+:::
+:::{tab-item} Paso 2
+```{code-block} text
+:emphasize-lines: 1, 2
+2 = 17 - 3 · 5
+1 = 3 - 2 · 1
+```
+
+> Se despejan los residuos.
+
+:::
+:::{tab-item} Paso 3
+```{code-block} text
+:emphasize-lines: 3
+2 = 17 - 3 · 5
+1 = 3 - 2 · 1
+1 = 3 - (17 - 3 · 5) · 1
+```
+
+> Se reemplaza el 2.
+
+:::
+:::{tab-item} Paso 4
+```{code-block} text
+:emphasize-lines: 4
+2 = 17 - 3 · 5
+1 = 3 - 2 · 1
+1 = 3 - (17 - 3 · 5) · 1
+1 = 3 - 17 · 1 + 3 · 5
+```
+
+> Se quitan los paréntesis.
+
+:::
+:::{tab-item} Paso 5
+```{code-block} text
+:emphasize-lines: 5
+2 = 17 - 3 · 5
+1 = 3 - 2 · 1
+1 = 3 - (17 - 3 · 5) · 1
+1 = 3 - 17 · 1 + 3 · 5
+1 = 3 · 6 - 17 · 1
+```
+
+> Se agrupa el 3.
+
+:::
+:::{tab-item} Paso 6
+```{code-block} text
+:emphasize-lines: 6
+2 = 17 - 3 · 5
+1 = 3 - 2 · 1
+1 = 3 - (17 - 3 · 5) · 1
+1 = 3 - 17 · 1 + 3 · 5
+1 = 3 · 6 - 17 · 1
+1 = 3 · (6) + 17 · (-1)
+```
+
+> **¿Cuál es el coeficiente que acompaña a 3?**
+
+:::
+:::{tab-item} Paso 7
+```{code-block} text
+:emphasize-lines: 7
+2 = 17 - 3 · 5
+1 = 3 - 2 · 1
+1 = 3 - (17 - 3 · 5) · 1
+1 = 3 - 17 · 1 + 3 · 5
+1 = 3 · 6 - 17 · 1
+1 = 3 · (6) + 17 · (-1)
+inverso de 3 mod 17 = 6
+```
+
+> $\overline{3} = 6$. Se puede verificar: $6 \cdot 3 = 18 \equiv 1 \pmod{17}$.
+
+:::
+::::
+:::::
+
+#### Ejemplo 4
+
+Encuentre el inverso de 7 módulo 26.
 
 :::::{admonition} Resultado
 :class: dropdown
@@ -811,7 +1032,7 @@ Encuentre el inverso de 7 módulo 26. Es el que necesitamos para descifrar en el
  2 = 1 · 2 + 0
 ```
 
-> Se verifica que $\text{mcd}(26, 7) = 1$.
+> Se verifica que $\text{mcd}(26, 7) = 1$. Ahora se expresa como combinación lineal.
 
 :::
 :::{tab-item} Paso 2
@@ -822,80 +1043,586 @@ Encuentre el inverso de 7 módulo 26. Es el que necesitamos para descifrar en el
 1 = 5 - 2 · 2
 ```
 
+> Se despejan los residuos.
+
 :::
 :::{tab-item} Paso 3
 ```{code-block} text
-:emphasize-lines: 2
+:emphasize-lines: 4
 5 = 26 - 7 · 3
-1 = 5 - (7 - 5 · 1) · 2 = 5 · 3 - 7 · 2
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
 ```
+
+> Se reemplaza el 2.
 
 :::
 :::{tab-item} Paso 4
 ```{code-block} text
-:emphasize-lines: 1
-1 = (26 - 7 · 3) · 3 - 7 · 2
+:emphasize-lines: 5
+5 = 26 - 7 · 3
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+1 = 5 - 7 · 2 + 5 · 2
 ```
+
+> Se quitan los paréntesis.
 
 :::
 :::{tab-item} Paso 5
 ```{code-block} text
-:emphasize-lines: 2, 3
-1 = (26 - 7 · 3) · 3 - 7 · 2
-1 = 26 · 3 - 7 · 9 - 7 · 2 = 26 · 3 - 7 · 11
-1 = 26 · (3) + 7 · (-11)
+:emphasize-lines: 6
+5 = 26 - 7 · 3
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+1 = 5 - 7 · 2 + 5 · 2
+1 = 5 · 3 - 7 · 2
 ```
 
-> El inverso de 7 módulo 26 es $-11$. **¿Es el mismo 15 que encontramos probando?**
+> Se agrupa el 5. **¿Qué residuo falta por reemplazar?**
 
 :::
 :::{tab-item} Paso 6
 ```{code-block} text
-:emphasize-lines: 4
+:emphasize-lines: 7
+5 = 26 - 7 · 3
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+1 = 5 - 7 · 2 + 5 · 2
+1 = 5 · 3 - 7 · 2
 1 = (26 - 7 · 3) · 3 - 7 · 2
-1 = 26 · 3 - 7 · 9 - 7 · 2 = 26 · 3 - 7 · 11
-1 = 26 · (3) + 7 · (-11)
--11 ≡ 15 (mod 26)
 ```
 
-> Sí: $-11 + 26 = 15$. El inverso es único módulo 26.
+> Se reemplaza el 5.
+
+:::
+:::{tab-item} Paso 7
+```{code-block} text
+:emphasize-lines: 8
+5 = 26 - 7 · 3
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+1 = 5 - 7 · 2 + 5 · 2
+1 = 5 · 3 - 7 · 2
+1 = (26 - 7 · 3) · 3 - 7 · 2
+1 = 26 · 3 - 7 · 9 - 7 · 2
+```
+
+> Se quitan los paréntesis.
+
+:::
+:::{tab-item} Paso 8
+```{code-block} text
+:emphasize-lines: 9
+5 = 26 - 7 · 3
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+1 = 5 - 7 · 2 + 5 · 2
+1 = 5 · 3 - 7 · 2
+1 = (26 - 7 · 3) · 3 - 7 · 2
+1 = 26 · 3 - 7 · 9 - 7 · 2
+1 = 26 · 3 - 7 · 11
+```
+
+> Se agrupa el 7.
+
+:::
+:::{tab-item} Paso 9
+```{code-block} text
+:emphasize-lines: 10
+5 = 26 - 7 · 3
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+1 = 5 - 7 · 2 + 5 · 2
+1 = 5 · 3 - 7 · 2
+1 = (26 - 7 · 3) · 3 - 7 · 2
+1 = 26 · 3 - 7 · 9 - 7 · 2
+1 = 26 · 3 - 7 · 11
+1 = 26 · (3) + 7 · (-11)
+```
+
+> Solo quedan 26 y 7. **¿Cuál es el coeficiente que acompaña a 7?**
+
+:::
+:::{tab-item} Paso 10
+```{code-block} text
+:emphasize-lines: 11
+5 = 26 - 7 · 3
+2 = 7 - 5 · 1
+1 = 5 - 2 · 2
+1 = 5 - (7 - 5 · 1) · 2
+1 = 5 - 7 · 2 + 5 · 2
+1 = 5 · 3 - 7 · 2
+1 = (26 - 7 · 3) · 3 - 7 · 2
+1 = 26 · 3 - 7 · 9 - 7 · 2
+1 = 26 · 3 - 7 · 11
+1 = 26 · (3) + 7 · (-11)
+inverso de 7 mod 26 = -11
+```
+
+> $\overline{7} = -11$. Se puede verificar: $(-11) \cdot 7 = -77 = 26 \cdot (-3) + 1$.
 
 :::
 ::::
 :::::
 
-#### Ejemplo 3
+#### Ejemplo 5
 
-Encuentre el inverso de 235 módulo 37 y verifíquelo.
+Encuentre el inverso de 235 módulo 37.
+
+:::::{admonition} Resultado
+:class: dropdown
+::::{tab-set}
+:::{tab-item} Paso 1
+```{code-block} text
+:emphasize-lines: 1, 2, 3, 4, 5
+235 = 37 · 6 + 13
+ 37 = 13 · 2 + 11
+ 13 = 11 · 1 + 2
+ 11 =  2 · 5 + 1
+  2 =  1 · 2 + 0
+```
+
+> Se verifica que $\text{mcd}(235, 37) = 1$. Ahora se expresa como combinación lineal.
+
+:::
+:::{tab-item} Paso 2
+```{code-block} text
+:emphasize-lines: 1, 2, 3, 4
+13 = 235 - 37 · 6
+11 = 37 - 13 · 2
+ 2 = 13 - 11 · 1
+ 1 = 11 - 2 · 5
+```
+
+> Se despejan los residuos.
+
+:::
+:::{tab-item} Paso 3
+```{code-block} text
+:emphasize-lines: 5
+13 = 235 - 37 · 6
+11 = 37 - 13 · 2
+ 2 = 13 - 11 · 1
+ 1 = 11 - 2 · 5
+1 = 11 - (13 - 11 · 1) · 5
+```
+
+> Se reemplaza el 2.
+
+:::
+:::{tab-item} Paso 4
+```{code-block} text
+:emphasize-lines: 6
+13 = 235 - 37 · 6
+11 = 37 - 13 · 2
+ 2 = 13 - 11 · 1
+ 1 = 11 - 2 · 5
+1 = 11 - (13 - 11 · 1) · 5
+1 = 11 · 6 - 13 · 5
+```
+
+> Se agrupa el 11.
+
+:::
+:::{tab-item} Paso 5
+```{code-block} text
+:emphasize-lines: 7
+13 = 235 - 37 · 6
+11 = 37 - 13 · 2
+ 2 = 13 - 11 · 1
+ 1 = 11 - 2 · 5
+1 = 11 - (13 - 11 · 1) · 5
+1 = 11 · 6 - 13 · 5
+1 = (37 - 13 · 2) · 6 - 13 · 5
+```
+
+> Se reemplaza el 11.
+
+:::
+:::{tab-item} Paso 6
+```{code-block} text
+:emphasize-lines: 8
+13 = 235 - 37 · 6
+11 = 37 - 13 · 2
+ 2 = 13 - 11 · 1
+ 1 = 11 - 2 · 5
+1 = 11 - (13 - 11 · 1) · 5
+1 = 11 · 6 - 13 · 5
+1 = (37 - 13 · 2) · 6 - 13 · 5
+1 = 37 · 6 - 13 · 17
+```
+
+> Se agrupa el 13.
+
+:::
+:::{tab-item} Paso 7
+```{code-block} text
+:emphasize-lines: 9
+13 = 235 - 37 · 6
+11 = 37 - 13 · 2
+ 2 = 13 - 11 · 1
+ 1 = 11 - 2 · 5
+1 = 11 - (13 - 11 · 1) · 5
+1 = 11 · 6 - 13 · 5
+1 = (37 - 13 · 2) · 6 - 13 · 5
+1 = 37 · 6 - 13 · 17
+1 = 37 · 6 - (235 - 37 · 6) · 17
+```
+
+> Se reemplaza el 13.
+
+:::
+:::{tab-item} Paso 8
+```{code-block} text
+:emphasize-lines: 10
+13 = 235 - 37 · 6
+11 = 37 - 13 · 2
+ 2 = 13 - 11 · 1
+ 1 = 11 - 2 · 5
+1 = 11 - (13 - 11 · 1) · 5
+1 = 11 · 6 - 13 · 5
+1 = (37 - 13 · 2) · 6 - 13 · 5
+1 = 37 · 6 - 13 · 17
+1 = 37 · 6 - (235 - 37 · 6) · 17
+1 = 37 · 108 - 235 · 17
+```
+
+> Se agrupa el 37.
+
+:::
+:::{tab-item} Paso 9
+```{code-block} text
+:emphasize-lines: 11
+13 = 235 - 37 · 6
+11 = 37 - 13 · 2
+ 2 = 13 - 11 · 1
+ 1 = 11 - 2 · 5
+1 = 11 - (13 - 11 · 1) · 5
+1 = 11 · 6 - 13 · 5
+1 = (37 - 13 · 2) · 6 - 13 · 5
+1 = 37 · 6 - 13 · 17
+1 = 37 · 6 - (235 - 37 · 6) · 17
+1 = 37 · 108 - 235 · 17
+1 = 37 · (108) + 235 · (-17)
+```
+
+> **¿Cuál es el coeficiente que acompaña a 235?**
+
+:::
+:::{tab-item} Paso 10
+```{code-block} text
+:emphasize-lines: 12
+13 = 235 - 37 · 6
+11 = 37 - 13 · 2
+ 2 = 13 - 11 · 1
+ 1 = 11 - 2 · 5
+1 = 11 - (13 - 11 · 1) · 5
+1 = 11 · 6 - 13 · 5
+1 = (37 - 13 · 2) · 6 - 13 · 5
+1 = 37 · 6 - 13 · 17
+1 = 37 · 6 - (235 - 37 · 6) · 17
+1 = 37 · 108 - 235 · 17
+1 = 37 · (108) + 235 · (-17)
+inverso de 235 mod 37 = -17
+```
+
+> El coeficiente que acompaña a 235, es decir $-17$, es el inverso. Se puede verificar: $-17 \cdot 235 \equiv 1 \pmod{37}$, porque $-3995 = 37 \cdot (-108) + 1$.
+
+:::
+::::
+:::::
+
+#### Ejemplo 6
+
+Encuentre el inverso de 6 módulo 9.
 
 :::{admonition} Resultado
 :class: dropdown
-Del ejemplo 3 de la sección 5, $1 = 235 \cdot (-17) + 37 \cdot (108)$. El coeficiente que acompaña a 235 es $-17$: ese es el inverso.
-
-Se puede verificar que $-17 \cdot 235 = -3995$, y $-3995 \equiv 1 \pmod{37}$, porque $-3995 - 1 = -3996 = 37 \cdot (-108)$.
-
-Como residuo entre 0 y 36, el inverso es $-17 + 37 = 20$.
+Se aplica la primera instrucción: $9 = 6 \cdot 1 + 3$ y $6 = 3 \cdot 2 + 0$. Entonces $\text{mcd}(6, 9) = 3$, que no es 1. El inverso **no existe**.
 :::
 
-#### Ejemplo 4
+### 6.2 Por qué funciona la fórmula
 
-Compare el número de intentos para hallar el inverso de 1234 módulo $1000003$ por tanteo y por Euclides.
+**En $1 = 3 \cdot (-2) + 7 \cdot (1)$, ¿qué le pasa al término $7 \cdot (1)$ al reducir módulo 7?**
+
+:::{admonition} Respuesta
+:class: dropdown
+Desaparece, porque es múltiplo de 7. Queda $1 \equiv 3 \cdot (-2) \pmod{7}$, que es exactamente la definición de inverso.
+:::
+
+:::{admonition} Teorema 2
+Sean $a$ un entero y $m > 1$. El inverso de $a$ módulo $m$ existe si y solo si $\text{mcd}(a, m) = 1$. Cuando existe, es único módulo $m$.
+:::
+
+:::{admonition} Demostración
+:class: dropdown
+**Si existe el inverso, $\text{mcd}(a, m) = 1$.** Si $\overline{a} \cdot a \equiv 1 \pmod{m}$, entonces $\overline{a} \cdot a - 1 = km$, o sea $1 = \overline{a} \cdot a - km$. Sea $d = \text{mcd}(a, m)$. Como $d \mid a$ y $d \mid m$, el corolario de la combinación lineal da $d \mid 1$, así que $d = 1$.
+
+**Si $\text{mcd}(a, m) = 1$, existe el inverso.** Por el teorema 1, $1 = a \cdot s + m \cdot t$. Reduciendo módulo $m$, $a \cdot s \equiv 1 \pmod{m}$: $s$ es un inverso de $a$.
+
+**Unicidad.** Si $c$ y $c'$ son inversos de $a$, entonces $c \equiv c(ac') = (ca)c' \equiv c' \pmod{m}$. $\blacksquare$
+:::
+
+La unicidad es módulo $m$: $-2$ y $5$ son el mismo inverso de 3 módulo 7, porque $-2 \equiv 5 \pmod{7}$. Si se quiere un residuo entre $0$ y $m - 1$, se le suma $m$ a un inverso negativo. Así, $\overline{7} = -11 \equiv 15 \pmod{26}$ y $\overline{235} = -17 \equiv 20 \pmod{37}$.
+
+En Scala, normalizando a ese residuo:
+
+```scala
+def inversoEuclides(a: Long, m: Long): Option[Long] = {
+  val (g, s, _) = bezout(a, m)
+  if (g == 1) Some(Math.floorMod(s, m)) else None
+}
+
+inversoEuclides(3, 7)   // Some(5)
+inversoEuclides(6, 9)   // None
+```
+
+**Compare el número de intentos para hallar el inverso de 1234 módulo $1000003$ probando valores de $c$ y con Euclides.**
 
 ```scala
 pasos(1000003, 1234)
 inversoEuclides(1234, 1000003)
 ```
 
-:::{admonition} Resultado
+:::{admonition} Respuesta
 :class: dropdown
 `inversoEuclides` retorna `Some(496760)`, y lo hace con muy pocas divisiones: `pasos(1000003, 1234)` da `7`.
 
-El tanteo de la Sesión 15 revisa $c = 1, 2, 3, \ldots$ hasta llegar a 496760: casi medio millón de intentos para el mismo resultado.
+Probar $c = 1, 2, 3, \ldots$ exigiría llegar hasta 496760: casi medio millón de intentos para el mismo resultado.
 :::
 
-## 7. Congruencias lineales con módulos grandes
+## 7. Resolver con el inverso
 
-Ya tenemos todas las piezas: Euclides para el mcd, sustitución para la combinación lineal, y el método del inverso de la Sesión 15.
+**Método.** Multiplique ambos lados de la congruencia por el inverso de $a$.
+
+:::::{admonition} Traza de 3x ≡ 4 (mod 7)
+:class: dropdown
+::::{tab-set}
+:::{tab-item} Paso 1
+```{code-block} text
+:emphasize-lines: 1
+3x ≡ 4 (mod 7)
+```
+
+> **¿Cuánto vale el inverso de 3 módulo 7?**
+
+:::
+:::{tab-item} Paso 2
+```{code-block} text
+:emphasize-lines: 2
+3x ≡ 4 (mod 7)
+5 · 3x ≡ 5 · 4 (mod 7)
+```
+
+> En la traza de la sección 6, $\overline{3} = -2$, y como residuo es 5. El teorema 2 de la Sesión 15 permite multiplicar ambos lados por el mismo número.
+
+:::
+:::{tab-item} Paso 3
+```{code-block} text
+:emphasize-lines: 3
+3x ≡ 4 (mod 7)
+5 · 3x ≡ 5 · 4 (mod 7)
+1 · x ≡ 20 (mod 7)
+```
+
+> $5 \cdot 3 = 15 \equiv 1$: el coeficiente de $x$ desaparece.
+
+:::
+:::{tab-item} Paso 4
+```{code-block} text
+:emphasize-lines: 4
+3x ≡ 4 (mod 7)
+5 · 3x ≡ 5 · 4 (mod 7)
+1 · x ≡ 20 (mod 7)
+x ≡ 6 (mod 7)
+```
+
+> Reducimos: $20 = 7 \cdot 2 + 6$. Coincide con el tanteo de la Sesión 15.
+
+:::
+::::
+:::::
+
+En una línea: si $\text{mcd}(a, m) = 1$, la solución de $ax \equiv b \pmod{m}$ es $x \equiv \overline{a}\,b \pmod{m}$, y es única módulo $m$.
+
+**Dividir no es lo mismo que multiplicar por el inverso.** En la sección 2 de la [Sesión 15](../Sesion15-CongruenciasLineales/index.md) vimos que $14 \equiv 8 \pmod{6}$ no permite dividir entre 2. Lo que sí vale es:
+
+:::{admonition} Proposición (cancelación)
+Si $ca \equiv cb \pmod{m}$ y $\text{mcd}(c, m) = 1$, entonces $a \equiv b \pmod{m}$.
+:::
+
+La demostración es el mismo paso del método: se multiplica por $\overline{c}$. En $14 \equiv 8 \pmod{6}$ falla porque $\text{mcd}(2, 6) = 2$, y 2 no tiene inverso módulo 6.
+
+### 7.1 Ejemplos
+
+#### Ejemplo 1
+
+Resuelva con el inverso.
+
+1. $5x \equiv 2 \pmod{7}$
+2. $7x \equiv 3 \pmod{5}$
+3. $11x \equiv 5 \pmod{6}$
+4. $4x \equiv 3 \pmod{9}$
+
+:::{admonition} Resultado
+:class: dropdown
+| Congruencia | Reducida | Inverso | $x \equiv \overline{a}\,b$ | Solución |
+|---|---|---|---|---|
+| $5x \equiv 2 \pmod{7}$ | igual | $\overline{5} = 3$ | $3 \cdot 2 = 6$ | $x \equiv 6 \pmod{7}$ |
+| $7x \equiv 3 \pmod{5}$ | $2x \equiv 3$ | $\overline{2} = 3$ | $3 \cdot 3 = 9$ | $x \equiv 4 \pmod{5}$ |
+| $11x \equiv 5 \pmod{6}$ | $5x \equiv 5$ | $\overline{5} = 5$ | $5 \cdot 5 = 25$ | $x \equiv 1 \pmod{6}$ |
+| $4x \equiv 3 \pmod{9}$ | igual | $\overline{4} = 7$ | $7 \cdot 3 = 21$ | $x \equiv 3 \pmod{9}$ |
+
+Las tres primeras coinciden con el tanteo de la sección 3 de la Sesión 15.
+:::
+
+#### Ejemplo 2
+
+Escriba `resolverUnica`, que aplica el método cuando $\text{mcd}(a, m) = 1$.
+
+:::{admonition} Resultado
+:class: dropdown
+```scala
+def resolverUnica(a: Long, b: Long, m: Long): Option[Long] =
+  inversoEuclides(a, m).map(c => Math.floorMod(c * b, m))
+
+resolverUnica(3, 4, 7)    // Some(6)
+resolverUnica(4, 3, 9)    // Some(3)
+resolverUnica(2, 1, 8)    // None
+```
+
+`Option` también tiene `map`: si hay inverso, lo transforma; si no, se queda en `None`. El caso `None` no significa siempre que no haya solución, como muestra la sección siguiente.
+:::
+
+## 8. Cuando $\text{mcd}(a, m) \neq 1$
+
+**Resuelva por tanteo $2x \equiv 1 \pmod{4}$ y $2x \equiv 2 \pmod{4}$.**
+
+:::{admonition} Respuesta
+:class: dropdown
+| $x$ | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| $2x \;\mathbf{mod}\; 4$ | 0 | 2 | 0 | 2 |
+
+$2x \equiv 1 \pmod{4}$ **no tiene solución**: el 1 nunca aparece. $2x \equiv 2 \pmod{4}$ tiene **dos**: $x \equiv 1$ y $x \equiv 3 \pmod{4}$.
+
+Mismo coeficiente, mismo módulo, y el número de soluciones cambió de 0 a 2. El método del inverso no aplica en ninguno de los dos casos, porque $\text{mcd}(2, 4) = 2$.
+:::
+
+**Repita con $6x \equiv 3 \pmod{10}$ y $6x \equiv 4 \pmod{10}$. ¿Qué tiene de especial el lado derecho?**
+
+:::{admonition} Respuesta
+:class: dropdown
+| $x$ | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| $6x \;\mathbf{mod}\; 10$ | 0 | 6 | 2 | 8 | **4** | 0 | 6 | 2 | 8 | **4** |
+
+El 3 no aparece y el 4 aparece dos veces, en $x = 4$ y $x = 9$. Solo salen múltiplos de 2, y $\text{mcd}(6, 10) = 2$. Tiene solución cuando el lado derecho es múltiplo del mcd.
+:::
+
+**¿Por qué?** Si $ax \equiv b \pmod{m}$, entonces $b = ax - km$ para algún entero $k$. Sea $d = \text{mcd}(a, m)$. Como $d \mid a$ y $d \mid m$, el corolario de la combinación lineal da $d \mid b$. Si $d \nmid b$, no hay solución.
+
+Si $d \mid b$, se divide todo entre $d$. Esto sí es válido, porque $m \mid (ax - b)$ equivale a $\frac{m}{d} \mid \big(\frac{a}{d}x - \frac{b}{d}\big)$, y además $\frac{a}{d}$ y $\frac{m}{d}$ ya son coprimos.
+
+:::::{admonition} Traza de 6x ≡ 4 (mod 10)
+:class: dropdown
+::::{tab-set}
+:::{tab-item} Paso 1
+```{code-block} text
+:emphasize-lines: 1
+6x ≡ 4 (mod 10)                    d = mcd(6, 10) = 2, y 2 | 4
+```
+
+> Hay solución. **¿Cuántas?**
+
+:::
+:::{tab-item} Paso 2
+```{code-block} text
+:emphasize-lines: 2
+6x ≡ 4 (mod 10)                    d = mcd(6, 10) = 2, y 2 | 4
+3x ≡ 2 (mod 5)                     se divide todo entre 2
+```
+
+> Ahora $\text{mcd}(3, 5) = 1$: aplica el método del inverso.
+
+:::
+:::{tab-item} Paso 3
+```{code-block} text
+:emphasize-lines: 3
+6x ≡ 4 (mod 10)                    d = mcd(6, 10) = 2, y 2 | 4
+3x ≡ 2 (mod 5)                     se divide todo entre 2
+x ≡ 2 · 2 = 4 (mod 5)              el inverso de 3 módulo 5 es 2
+```
+
+:::
+:::{tab-item} Paso 4
+```{code-block} text
+:emphasize-lines: 4
+6x ≡ 4 (mod 10)                    d = mcd(6, 10) = 2, y 2 | 4
+3x ≡ 2 (mod 5)                     se divide todo entre 2
+x ≡ 2 · 2 = 4 (mod 5)              el inverso de 3 módulo 5 es 2
+x ≡ 4 o x ≡ 9 (mod 10)             4 + 5k, con k = 0, 1
+```
+
+> La clase módulo 5 se parte en dos clases módulo 10. Coincide con la tabla.
+
+:::
+::::
+:::::
+
+:::{admonition} Teorema 3
+Sea $d = \text{mcd}(a, m)$. La congruencia $ax \equiv b \pmod{m}$ tiene solución si y solo si $d \mid b$. En ese caso tiene exactamente $d$ soluciones módulo $m$: si $x_0$ es una de ellas, son
+
+$$
+x_0,\quad x_0 + \frac{m}{d},\quad x_0 + 2\frac{m}{d},\quad \ldots,\quad x_0 + (d-1)\frac{m}{d}
+$$
+:::
+
+Con $d = 1$ queda el caso de la sección 7: una sola solución módulo $m$.
+
+### 8.1 Ejemplos
+
+#### Ejemplo 1
+
+Sin resolver, diga cuántas soluciones módulo $m$ tiene cada congruencia.
+
+1. $9x \equiv 12 \pmod{15}$
+2. $9x \equiv 10 \pmod{15}$
+3. $10x \equiv 6 \pmod{14}$
+4. $8x \equiv 5 \pmod{15}$
+
+:::{admonition} Resultado
+:class: dropdown
+| Congruencia | $d$ | ¿$d \mid b$? | Soluciones |
+|---|---|---|---|
+| $9x \equiv 12 \pmod{15}$ | 3 | sí | 3 |
+| $9x \equiv 10 \pmod{15}$ | 3 | no | 0 |
+| $10x \equiv 6 \pmod{14}$ | 2 | sí | 2 |
+| $8x \equiv 5 \pmod{15}$ | 1 | sí | 1 |
+:::
+
+#### Ejemplo 2
+
+Resuelva $9x \equiv 12 \pmod{15}$ y $10x \equiv 6 \pmod{14}$.
+
+:::{admonition} Resultado
+:class: dropdown
+**Primera.** Dividiendo entre 3: $3x \equiv 4 \pmod{5}$. Con $\overline{3} = 2$: $x \equiv 8 \equiv 3 \pmod{5}$. Módulo 15: $x \equiv 3, 8, 13$.
+
+**Segunda.** Dividiendo entre 2: $5x \equiv 3 \pmod{7}$. Con $\overline{5} = 3$: $x \equiv 9 \equiv 2 \pmod{7}$. Módulo 14: $x \equiv 2, 9$.
+:::
+
+## 9. Congruencias lineales con módulos grandes
+
+Ya tenemos todas las piezas: Euclides para el mcd, sustitución para la combinación lineal, y el inverso para despejar $x$.
 
 **Resuelva $235x \equiv 5 \pmod{37}$.**
 
@@ -910,7 +1637,7 @@ $$
 Se verifica: $235 \cdot 26 = 6110 = 37 \cdot 165 + 5$.
 :::
 
-**¿Y cuando $\text{mcd}(a, m) = d > 1$?** La combinación lineal sirve igual. De $d = as + mt$, dividiendo entre $d$, sale $1 = \frac{a}{d} s + \frac{m}{d} t$: el mismo $s$ es el inverso de $\frac{a}{d}$ módulo $\frac{m}{d}$. Eso permite aplicar el teorema 4 de la Sesión 15 en una sola función:
+**¿Y cuando $\text{mcd}(a, m) = d > 1$?** La combinación lineal sirve igual. De $d = as + mt$, dividiendo entre $d$, sale $1 = \frac{a}{d} s + \frac{m}{d} t$: el mismo $s$ es el inverso de $\frac{a}{d}$ módulo $\frac{m}{d}$. Eso permite aplicar el teorema 3 en una sola función:
 
 ```scala
 def resolver(a: Long, b: Long, m: Long): List[Long] = {
@@ -932,7 +1659,7 @@ resolver(1234, 5, 1000003)  // List(483794)
 
 El único costo es el de `bezout`, que es $O(\log m)$. El tanteo de la Sesión 15 costaba $O(m)$.
 
-### 7.1 Ejemplos
+### 9.1 Ejemplos
 
 #### Ejemplo 1
 
@@ -957,7 +1684,86 @@ Es la misma estructura en las cuatro. Si el inverso es negativo, se suma el mód
 
 #### Ejemplo 2
 
-Vuelva al cifrado afín de la Sesión 15, cambiando la clave: $c = (11p + 4) \;\mathbf{mod}\; 26$. Halle el inverso de 11 con Euclides, escriba la fórmula para descifrar y descifre `EPA`.
+En el ejercicio 3 de la sección 4 de la [Sesión 15](../Sesion15-CongruenciasLineales/index.md) ciframos con $c = (7p + 3) \;\mathbf{mod}\; 26$ y desciframos probando valores de $p$. Escriba la fórmula para descifrar, descifre `RDZD` con ella y actualice `descifrar` en Scala.
+
+:::::{admonition} Solución: la fórmula para descifrar
+:class: dropdown
+::::{tab-set}
+:::{tab-item} Paso 1
+```{code-block} text
+:emphasize-lines: 1
+c ≡ 7p + 3 (mod 26)
+```
+
+> Se conoce $c$ y se busca $p$.
+
+:::
+:::{tab-item} Paso 2
+```{code-block} text
+:emphasize-lines: 2
+c ≡ 7p + 3 (mod 26)
+7p ≡ c - 3 (mod 26)
+```
+
+> Es una congruencia lineal en $p$.
+
+:::
+:::{tab-item} Paso 3
+```{code-block} text
+:emphasize-lines: 3
+c ≡ 7p + 3 (mod 26)
+7p ≡ c - 3 (mod 26)
+15 · 7p ≡ 15(c - 3) (mod 26)
+```
+
+> Por el ejemplo 4 de la sección 6, $\overline{7} = -11 \equiv 15 \pmod{26}$.
+
+:::
+:::{tab-item} Paso 4
+```{code-block} text
+:emphasize-lines: 4
+c ≡ 7p + 3 (mod 26)
+7p ≡ c - 3 (mod 26)
+15 · 7p ≡ 15(c - 3) (mod 26)
+p ≡ 15(c - 3) (mod 26)
+```
+
+> $15 \cdot 7 \equiv 1$: queda una fórmula directa.
+
+:::
+::::
+:::::
+
+:::{admonition} Solución: descifrar RDZD
+:class: dropdown
+| Letra cifrada | $c$ | $15(c - 3)$ | $p$ | Letra |
+|---|---|---|---|---|
+| R | 17 | 210 | 2 | C |
+| D | 3 | 0 | 0 | A |
+| Z | 25 | 330 | 18 | S |
+| D | 3 | 0 | 0 | A |
+
+El mensaje es `CASA`, el mismo resultado del tanteo, pero sin probar valores.
+:::
+
+:::{admonition} Solución: implementación
+:class: dropdown
+`descifrar` ya no recibe el coeficiente $a$, sino su inverso:
+
+```scala
+def descifrar(aInv: Int, k: Int)(c: Int): Int = Math.floorMod(aInv * (c - k), 26)
+
+val ida    = cifrar(7, 3)
+val vuelta = descifrar(15, 3)
+
+aTexto(aNumeros("RDZD").map(vuelta))            // "CASA"
+(0 until 26).forall(p => vuelta(ida(p)) == p)   // true
+```
+:::
+
+#### Ejemplo 3
+
+Cambie la clave: $c = (11p + 4) \;\mathbf{mod}\; 26$. Halle el inverso de 11 con la fórmula, escriba la fórmula para descifrar y descifre `EPA`.
 
 :::{admonition} Resultado
 :class: dropdown
@@ -976,11 +1782,11 @@ De $11p \equiv c - 4$ sale $p \equiv 19(c - 4) \pmod{26}$.
 El mensaje es `ABC`.
 :::
 
-#### Ejemplo 3
+#### Ejemplo 4
 
 Diga por qué $\text{mcd}(a, m)$ debe calcularse **antes** de buscar el inverso, con el caso $6x \equiv 4 \pmod{9}$.
 
 :::{admonition} Resultado
 :class: dropdown
-$\text{mcd}(6, 9) = 3$, y $3 \nmid 4$. Por el teorema 4 de la Sesión 15 no hay solución, y el inverso de 6 módulo 9 no existe. Euclides lo detecta en las primeras líneas: $9 = 6 \cdot 1 + 3$ y $6 = 3 \cdot 2 + 0$. Sin esa verificación, se buscaría un número que no existe.
+$\text{mcd}(6, 9) = 3$, y $3 \nmid 4$. Por el teorema 3 no hay solución, y por el teorema 2 el inverso de 6 módulo 9 no existe. Euclides lo detecta en las primeras líneas: $9 = 6 \cdot 1 + 3$ y $6 = 3 \cdot 2 + 0$. Sin esa verificación, se buscaría un número que no existe.
 :::

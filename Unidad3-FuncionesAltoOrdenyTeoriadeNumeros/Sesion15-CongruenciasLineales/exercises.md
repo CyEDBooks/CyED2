@@ -55,7 +55,7 @@ Muestre que ningún número de la forma $8k + 7$ es suma de tres cuadrados.
 
 ## Ejercicio 5
 
-Encuentre todas las soluciones módulo $m$, por tanteo o con el inverso.
+Encuentre todas las soluciones módulo $m$, por tanteo.
 
 1. $4x \equiv 5 \pmod{9}$
 2. $2x \equiv 7 \pmod{17}$
@@ -63,71 +63,56 @@ Encuentre todas las soluciones módulo $m$, por tanteo o con el inverso.
 
 :::{admonition} Pistas y solución general
 :class: dropdown
-**Pistas.** Verifique primero $\text{mcd}(a, m)$. Después, multiplique por el inverso.
+**Pistas.** Haga una tabla de $ax \;\mathbf{mod}\; m$ para $x = 0, \ldots, m - 1$.
 
-**Solución general.** $\overline{4} = 7$ da $x \equiv 35 \equiv 8 \pmod{9}$. $\overline{2} = 9$ da $x \equiv 63 \equiv 12 \pmod{17}$. $\overline{3} = 3$ da $x \equiv 3 \pmod{8}$.
+**Solución general.** $x \equiv 8 \pmod{9}$, porque $4 \cdot 8 = 32 \equiv 5$. $x \equiv 12 \pmod{17}$, porque $2 \cdot 12 = 24 \equiv 7$. $x \equiv 3 \pmod{8}$, porque $3 \cdot 3 = 9 \equiv 1$.
 :::
 
 ## Ejercicio 6
 
-Sin resolver, diga cuántas soluciones módulo $m$ tiene cada congruencia. Después, resuelva las que tengan.
-
-1. $4x \equiv 6 \pmod{10}$
-2. $4x \equiv 7 \pmod{10}$
-3. $12x \equiv 18 \pmod{30}$
+Dé enteros $a$, $b$, $c$ y $m$ tales que $ca \equiv cb \pmod{m}$, pero $a \not\equiv b \pmod{m}$. ¿Qué dice ese ejemplo sobre dividir ambos lados de una congruencia?
 
 :::{admonition} Pistas y solución general
 :class: dropdown
-**Pistas.** Use el teorema 4. Divida todo entre el mcd antes de buscar el inverso.
+**Pistas.** Revise el ejemplo de la sección 2 con $14 \equiv 8 \pmod{6}$.
 
-**Solución general.** 1: $d = 2$ y $2 \mid 6$, así que hay 2 soluciones: $x \equiv 4, 9 \pmod{10}$. 2: $d = 2$ y $2 \nmid 7$: ninguna. 3: $d = 6$ y $6 \mid 18$: 6 soluciones; $2x \equiv 3 \pmod{5}$ da $x \equiv 4 \pmod{5}$, y módulo 30 son $4, 9, 14, 19, 24, 29$.
+**Solución general.** $2 \cdot 7 \equiv 2 \cdot 4 \pmod{6}$, pero $7 \not\equiv 4 \pmod{6}$. No siempre se pueden dividir ambos lados entre el mismo número.
 :::
 
 ## Ejercicio 7
-
-Demuestre la cancelación: si $ca \equiv cb \pmod{m}$ y $\text{mcd}(c, m) = 1$, entonces $a \equiv b \pmod{m}$. Dé un contraejemplo cuando $\text{mcd}(c, m) \neq 1$.
-
-:::{admonition} Pistas y solución general
-:class: dropdown
-**Pistas.** Multiplique ambos lados por $\overline{c}$.
-
-**Solución general.** $\overline{c}ca \equiv \overline{c}cb$ da $a \equiv b$. Contraejemplo: $2 \cdot 7 \equiv 2 \cdot 4 \pmod{6}$, pero $7 \not\equiv 4 \pmod{6}$.
-:::
-
-## Ejercicio 8
 
 Un sistema rota claves cada 9 horas. Acaba de rotar a las 04:00. ¿Después de cuántas rotaciones ocurre por primera vez una a las 22:00? ¿Y a las 21:00?
 
 :::{admonition} Pistas y solución general
 :class: dropdown
-**Pistas.** Escriba la hora tras $x$ rotaciones con $\mathbf{mod}\; 24$, y plantee la congruencia lineal. Mire $\text{mcd}(9, 24)$.
+**Pistas.** Escriba la hora tras $x$ rotaciones con $\mathbf{mod}\; 24$, plantee la congruencia lineal y haga la tabla de $9x \;\mathbf{mod}\; 24$.
 
-**Solución general.** $4 + 9x \equiv 22 \pmod{24}$ da $9x \equiv 18$, y dividiendo entre 3, $3x \equiv 6 \pmod{8}$: $x \equiv 2 \pmod{8}$. Son 2 rotaciones. Para las 21:00, $9x \equiv 17 \pmod{24}$ no tiene solución, porque $3 \nmid 17$.
+**Solución general.** $4 + 9x \equiv 22 \pmod{24}$ da $9x \equiv 18$, y la tabla da $x = 2$. Son 2 rotaciones. Para las 21:00, $9x \equiv 17 \pmod{24}$ no tiene solución: $9x \;\mathbf{mod}\; 24$ solo toma los valores $0, 9, 18, 3, 12, 21, 6, 15$.
 :::
 
-## Ejercicio 9
+## Ejercicio 8
 
-El código `3120?47391` usa el esquema del ejercicio 2 de la sección 7 y perdió el quinto dígito. Recupérelo.
+El código `3120?47391` usa el esquema del ejercicio 2 de la sección 4 y perdió el quinto dígito. Recupérelo.
 
 :::{admonition} Pistas y solución general
 :class: dropdown
 **Pistas.** Calcule $\sum i \cdot d_i$ con los dígitos conocidos, y plantee $5x + \text{suma} \equiv 0 \pmod{11}$.
 
-**Solución general.** Los conocidos suman 199, y $199 \equiv 1 \pmod{11}$. Queda $5x \equiv -1 \equiv 10 \pmod{11}$. Con $\overline{5} = 9$: $x \equiv 90 \equiv 2 \pmod{11}$. El dígito es 2.
+**Solución general.** Los conocidos suman 199, y $199 \equiv 1 \pmod{11}$. Queda $5x \equiv -1 \equiv 10 \pmod{11}$. La tabla de $5x \;\mathbf{mod}\; 11$ da $x = 2$. El dígito es 2.
 :::
 
-## Ejercicio 10
+## Ejercicio 9
 
-Para el cifrado $c = (5p + 8) \;\mathbf{mod}\; 26$: cifre `SOL`, escriba la fórmula para descifrar y extienda el código de la sección 7 para cifrar y descifrar cadenas completas.
+Para el cifrado $c = (5p + 8) \;\mathbf{mod}\; 26$: cifre `SOL` y descifre `UAL` por tanteo, y use el código de la sección 4 para cifrar y descifrar cadenas completas.
 
 :::{admonition} Pistas y solución general
 :class: dropdown
-**Pistas.** $\text{mcd}(5, 26) = 1$. Encuentre el inverso de 5 con `inverso`.
+**Pistas.** Para descifrar, resuelva $5p \equiv c - 8 \pmod{26}$ con `porTanteo`.
 
-**Solución general.** `SOL` se cifra como `UAL`. $\overline{5} = 21$, así que $p \equiv 21(c - 8) \pmod{26}$. Una cadena se cifra con `aTexto(aNumeros(s).map(cifrar(5, 8)))`.
+**Solución general.** `SOL` se cifra como `UAL`. Una cadena se cifra con `aTexto(aNumeros(s).map(cifrar(5, 8)))` y se descifra con `aTexto(aNumeros(s).map(descifrar(5, 8)))`.
 :::
 
-## Ejercicio 11
+## Ejercicio 10
 
 Muestre que **no** se puede descifrar sin ambigüedad con $c = (6p + 1) \;\mathbf{mod}\; 26$: dé dos letras distintas con el mismo cifrado.
 
@@ -138,6 +123,6 @@ Muestre que **no** se puede descifrar sin ambigüedad con $c = (6p + 1) \;\mathb
 **Solución general.** $p = 0$ y $p = 13$ dan $c = 1$ y $6 \cdot 13 + 1 = 79 \equiv 1 \pmod{26}$. A y N se cifran igual.
 :::
 
-## Ejercicio 12
+## Ejercicio 11
 
 Encuentre al menos 3 soluciones de $3x \equiv 5 \pmod{16}$.

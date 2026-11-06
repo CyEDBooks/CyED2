@@ -12,10 +12,7 @@ title: "Unidad 3 · Sesión 15: Aritmética modular y congruencias lineales"
 1. Congruencias
 2. Aritmética modular
 3. Congruencias lineales
-4. El inverso de $a$ módulo $m$
-5. Resolver con el inverso
-6. Cuando $\text{mcd}(a, m) \neq 1$
-7. Ejercicio: de la aritmética modular a la congruencia lineal
+4. Ejercicio: de la aritmética modular a la congruencia lineal
 
 En la [Sesión 14](../Sesion14-Divisibilidad/index.md) definimos $a \;\mathbf{mod}\; d$ como el residuo de la división canónica: siempre está entre $0$ y $d - 1$, aunque $a$ sea negativo. Aquí trabajamos con ese residuo. Las trazas largas están en desplegables con pestañas **Paso 1, Paso 2, …**.
 
@@ -206,7 +203,7 @@ Consecuencias que se usan todo el tiempo:
 | $(ab) \;\mathbf{mod}\; m = \big((a \;\mathbf{mod}\; m)(b \;\mathbf{mod}\; m)\big) \;\mathbf{mod}\; m$ | reducir antes de multiplicar |
 | si $a \equiv b \pmod{m}$, entonces $a^k \equiv b^k \pmod{m}$ para todo $k \ge 1$ | aplicar el producto $k$ veces |
 
-La división **no** se comporta igual: $14 \equiv 8 \pmod{6}$, pero al dividir ambos lados entre 2 queda $7 \not\equiv 4 \pmod{6}$. Volveremos a esto en la sección 5.
+La división **no** se comporta igual: $14 \equiv 8 \pmod{6}$, pero al dividir ambos lados entre 2 queda $7 \not\equiv 4 \pmod{6}$. Volveremos a esto en la [Sesión 16](../Sesion16-AlgoritmoEuclides/index.md).
 
 ### 2.1 Ejemplos
 
@@ -385,338 +382,7 @@ Resuelva por tanteo.
 Reducir el coeficiente módulo $m$ antes de empezar acorta las cuentas.
 :::
 
-## 4. El inverso de $a$ módulo $m$
-
-En álgebra, $3x = 4$ se resuelve dividiendo entre 3, es decir, multiplicando por $\frac{1}{3}$. Módulo 7 no hay fracciones, pero podemos buscar un entero que haga el papel de $\frac{1}{3}$: uno que, multiplicado por 3, dé 1.
-
-**Encuentre un entero $c$ tal que $3c \equiv 1 \pmod{7}$.**
-
-:::{admonition} Respuesta
-:class: dropdown
-En la tabla de la sección 3, el 1 aparece en $x = 5$: $3 \cdot 5 = 15 \equiv 1 \pmod{7}$. También sirve $c = -2$: $3 \cdot (-2) = -6 \equiv 1 \pmod{7}$. Son el mismo residuo, porque $-2 \equiv 5 \pmod{7}$.
-:::
-
-:::{admonition} Definición
-Un **inverso de $a$ módulo $m$** es un entero $\overline{a}$ tal que
-
-$$
-\overline{a} \cdot a \equiv 1 \pmod{m}
-$$
-:::
-
-**Módulo 7, ¿qué residuos tienen inverso? Módulo 8, ¿cuáles?** Busque el 1 en cada fila.
-
-:::{admonition} Respuesta
-:class: dropdown
-Módulo 7, todas las filas tienen un 1:
-
-| $a$ | $a \cdot 0$ | $a \cdot 1$ | $a \cdot 2$ | $a \cdot 3$ | $a \cdot 4$ | $a \cdot 5$ | $a \cdot 6$ | $\overline{a}$ |
-|---|---|---|---|---|---|---|---|---|
-| 1 | 0 | **1** | 2 | 3 | 4 | 5 | 6 | 1 |
-| 2 | 0 | 2 | 4 | 6 | **1** | 3 | 5 | 4 |
-| 3 | 0 | 3 | 6 | 2 | 5 | **1** | 4 | 5 |
-| 4 | 0 | 4 | **1** | 5 | 2 | 6 | 3 | 2 |
-| 5 | 0 | 5 | 3 | **1** | 6 | 4 | 2 | 3 |
-| 6 | 0 | 6 | 5 | 4 | 3 | 2 | **1** | 6 |
-
-Módulo 8, no. Las filas de 2, 4 y 6 nunca llegan al 1:
-
-| $a$ | $a \cdot 0$ | $a \cdot 1$ | $a \cdot 2$ | $a \cdot 3$ | $a \cdot 4$ | $a \cdot 5$ | $a \cdot 6$ | $a \cdot 7$ | $\overline{a}$ |
-|---|---|---|---|---|---|---|---|---|---|
-| 1 | 0 | **1** | 2 | 3 | 4 | 5 | 6 | 7 | 1 |
-| 2 | 0 | 2 | 4 | 6 | 0 | 2 | 4 | 6 | no hay |
-| 3 | 0 | 3 | 6 | **1** | 4 | 7 | 2 | 5 | 3 |
-| 4 | 0 | 4 | 0 | 4 | 0 | 4 | 0 | 4 | no hay |
-| 5 | 0 | 5 | 2 | 7 | 4 | **1** | 6 | 3 | 5 |
-| 6 | 0 | 6 | 4 | 2 | 0 | 6 | 4 | 2 | no hay |
-| 7 | 0 | 7 | 6 | 5 | 4 | 3 | 2 | **1** | 7 |
-
-Tienen inverso los que no comparten factores con 8: 1, 3, 5 y 7. Módulo 7, que es primo, tienen todos.
-:::
-
-Cada fila es una vuelta alrededor de un reloj de $m$ posiciones, dando saltos de tamaño $a$. Con saltos de 3 sobre 7 posiciones se visitan todas, incluida la del 1. Con saltos de 2 sobre 8 se visitan solo los pares.
-
-![Dos relojes. A la izquierda, módulo 7 con saltos de 3: el recorrido 0, 3, 6, 2, 5, 1, 4 visita los siete residuos. A la derecha, módulo 8 con saltos de 2: el recorrido 0, 2, 4, 6 solo visita los pares](images/saltos-mod.svg)
-
-:::{admonition} Teorema 3
-Sean $a$ un entero y $m > 1$. El inverso de $a$ módulo $m$ existe si y solo si $\text{mcd}(a, m) = 1$. Cuando existe, es único módulo $m$.
-:::
-
-:::{admonition} Demostración
-:class: dropdown
-**Si existe el inverso, $\text{mcd}(a, m) = 1$.** Si $\overline{a} \cdot a \equiv 1 \pmod{m}$, entonces $\overline{a} \cdot a - 1 = km$, o sea $1 = \overline{a} \cdot a - km$. Sea $d = \text{mcd}(a, m)$. Como $d \mid a$ y $d \mid m$, el corolario de la combinación lineal da $d \mid 1$, así que $d = 1$.
-
-**Si $\text{mcd}(a, m) = 1$, existe el inverso.** Consideremos $a \cdot 0, a \cdot 1, \ldots, a \cdot (m-1)$ módulo $m$. Si dos de ellos fueran iguales, $ax \equiv ay$, tendríamos $m \mid a(x - y)$. Como $a$ y $m$ no comparten primos, por la factorización única todos los primos de $m$ están en $x - y$, y $m \mid (x - y)$. Pero $\lvert x - y \rvert < m$, así que $x = y$. Entonces los $m$ valores son distintos y recorren todos los residuos, incluido el 1. Este argumento garantiza que la fila tiene un 1; en la [Sesión 16](../Sesion16-AlgoritmoEuclides/index.md) veremos cómo encontrarlo sin recorrerla.
-
-**Unicidad.** Si $c$ y $c'$ son inversos de $a$, entonces $c \equiv c(ac') = (ca)c' \equiv c' \pmod{m}$. $\blacksquare$
-:::
-
-### 4.1 Ejemplos
-
-#### Ejemplo 1
-
-Por tanteo, encuentre el inverso en cada caso o justifique que no existe.
-
-1. $5$ módulo $7$
-2. $3$ módulo $17$
-3. $4$ módulo $9$
-4. $6$ módulo $9$
-
-:::{admonition} Resultado
-:class: dropdown
-1. $\overline{5} = 3$, porque $5 \cdot 3 = 15 \equiv 1 \pmod{7}$.
-2. $\overline{3} = 6$, porque $3 \cdot 6 = 18 \equiv 1 \pmod{17}$.
-3. $\overline{4} = 7$, porque $4 \cdot 7 = 28 \equiv 1 \pmod{9}$. También sirve $-2$.
-4. No existe: $\text{mcd}(6, 9) = 3 \neq 1$. Los múltiplos de 6 módulo 9 son $0, 6, 3, 0, 6, 3, \ldots$
-:::
-
-#### Ejemplo 2
-
-Escriba `inverso` con un método de alto orden. Debe devolver `Some(c)` con el menor residuo positivo que sea inverso, y `None` si no existe.
-
-:::{admonition} Resultado
-:class: dropdown
-`find` devuelve el primer elemento que cumple el predicado, envuelto en un `Option`:
-
-```scala
-def inverso(a: Int, m: Int): Option[Int] =
-  (1 until m).find(c => Math.floorMod(a * c, m) == 1)
-
-inverso(3, 7)    // Some(5)
-inverso(7, 26)   // Some(15)
-inverso(2, 8)    // None
-```
-
-Sigue siendo un tanteo: en el peor caso hace $m - 1$ intentos.
-:::
-
-## 5. Resolver con el inverso
-
-**Método.** Multiplique ambos lados de la congruencia por el inverso de $a$.
-
-:::::{admonition} Traza de 3x ≡ 4 (mod 7)
-:class: dropdown
-::::{tab-set}
-:::{tab-item} Paso 1
-```{code-block} text
-:emphasize-lines: 1
-3x ≡ 4 (mod 7)
-```
-
-> **¿Cuánto vale el inverso de 3 módulo 7?**
-
-:::
-:::{tab-item} Paso 2
-```{code-block} text
-:emphasize-lines: 2
-3x ≡ 4 (mod 7)
-5 · 3x ≡ 5 · 4 (mod 7)
-```
-
-> Por la tabla, $\overline{3} = 5$. El teorema 2 permite multiplicar ambos lados por el mismo número.
-
-:::
-:::{tab-item} Paso 3
-```{code-block} text
-:emphasize-lines: 3
-3x ≡ 4 (mod 7)
-5 · 3x ≡ 5 · 4 (mod 7)
-1 · x ≡ 20 (mod 7)
-```
-
-> $5 \cdot 3 = 15 \equiv 1$: el coeficiente de $x$ desaparece.
-
-:::
-:::{tab-item} Paso 4
-```{code-block} text
-:emphasize-lines: 4
-3x ≡ 4 (mod 7)
-5 · 3x ≡ 5 · 4 (mod 7)
-1 · x ≡ 20 (mod 7)
-x ≡ 6 (mod 7)
-```
-
-> Reducimos: $20 = 7 \cdot 2 + 6$. Coincide con el tanteo.
-
-:::
-::::
-:::::
-
-En una línea: si $\text{mcd}(a, m) = 1$, la solución de $ax \equiv b \pmod{m}$ es $x \equiv \overline{a}\,b \pmod{m}$, y es única módulo $m$.
-
-**Dividir no es lo mismo que multiplicar por el inverso.** En la sección 2 vimos que $14 \equiv 8 \pmod{6}$ no permite dividir entre 2. Lo que sí vale es:
-
-:::{admonition} Proposición (cancelación)
-Si $ca \equiv cb \pmod{m}$ y $\text{mcd}(c, m) = 1$, entonces $a \equiv b \pmod{m}$.
-:::
-
-La demostración es el mismo paso del método: se multiplica por $\overline{c}$. En $14 \equiv 8 \pmod{6}$ falla porque $\text{mcd}(2, 6) = 2$, y 2 no tiene inverso módulo 6.
-
-### 5.1 Ejemplos
-
-#### Ejemplo 1
-
-Resuelva con el inverso. Los inversos se pueden tomar de las tablas de la sección 4.
-
-1. $5x \equiv 2 \pmod{7}$
-2. $7x \equiv 3 \pmod{5}$
-3. $11x \equiv 5 \pmod{6}$
-4. $4x \equiv 3 \pmod{9}$
-
-:::{admonition} Resultado
-:class: dropdown
-| Congruencia | Reducida | Inverso | $x \equiv \overline{a}\,b$ | Solución |
-|---|---|---|---|---|
-| $5x \equiv 2 \pmod{7}$ | igual | $\overline{5} = 3$ | $3 \cdot 2 = 6$ | $x \equiv 6 \pmod{7}$ |
-| $7x \equiv 3 \pmod{5}$ | $2x \equiv 3$ | $\overline{2} = 3$ | $3 \cdot 3 = 9$ | $x \equiv 4 \pmod{5}$ |
-| $11x \equiv 5 \pmod{6}$ | $5x \equiv 5$ | $\overline{5} = 5$ | $5 \cdot 5 = 25$ | $x \equiv 1 \pmod{6}$ |
-| $4x \equiv 3 \pmod{9}$ | igual | $\overline{4} = 7$ | $7 \cdot 3 = 21$ | $x \equiv 3 \pmod{9}$ |
-
-Las tres primeras coinciden con el tanteo de la sección 3.
-:::
-
-#### Ejemplo 2
-
-Escriba `resolver`, que aplica el método cuando $\text{mcd}(a, m) = 1$.
-
-:::{admonition} Resultado
-:class: dropdown
-```scala
-def resolver(a: Int, b: Int, m: Int): Option[Int] =
-  inverso(a, m).map(c => Math.floorMod(c * b, m))
-
-resolver(3, 4, 7)    // Some(6)
-resolver(4, 3, 9)    // Some(3)
-resolver(2, 1, 8)    // None
-```
-
-`Option` también tiene `map`: si hay inverso, lo transforma; si no, se queda en `None`. El caso `None` no significa siempre que no haya solución, como muestra la sección siguiente.
-:::
-
-## 6. Cuando $\text{mcd}(a, m) \neq 1$
-
-**Resuelva por tanteo $2x \equiv 1 \pmod{4}$ y $2x \equiv 2 \pmod{4}$.**
-
-:::{admonition} Respuesta
-:class: dropdown
-| $x$ | 0 | 1 | 2 | 3 |
-|---|---|---|---|---|
-| $2x \;\mathbf{mod}\; 4$ | 0 | 2 | 0 | 2 |
-
-$2x \equiv 1 \pmod{4}$ **no tiene solución**: el 1 nunca aparece. $2x \equiv 2 \pmod{4}$ tiene **dos**: $x \equiv 1$ y $x \equiv 3 \pmod{4}$.
-
-Mismo coeficiente, mismo módulo, y el número de soluciones cambió de 0 a 2. El método del inverso no aplica en ninguno de los dos casos, porque $\text{mcd}(2, 4) = 2$.
-:::
-
-**Repita con $6x \equiv 3 \pmod{10}$ y $6x \equiv 4 \pmod{10}$. ¿Qué tiene de especial el lado derecho?**
-
-:::{admonition} Respuesta
-:class: dropdown
-| $x$ | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-|---|---|---|---|---|---|---|---|---|---|---|
-| $6x \;\mathbf{mod}\; 10$ | 0 | 6 | 2 | 8 | **4** | 0 | 6 | 2 | 8 | **4** |
-
-El 3 no aparece y el 4 aparece dos veces, en $x = 4$ y $x = 9$. Solo salen múltiplos de 2, y $\text{mcd}(6, 10) = 2$. Tiene solución cuando el lado derecho es múltiplo del mcd.
-:::
-
-**¿Por qué?** Si $ax \equiv b \pmod{m}$, entonces $b = ax - km$ para algún entero $k$. Sea $d = \text{mcd}(a, m)$. Como $d \mid a$ y $d \mid m$, el corolario de la combinación lineal da $d \mid b$. Si $d \nmid b$, no hay solución.
-
-Si $d \mid b$, se divide todo entre $d$. Esto sí es válido, porque $m \mid (ax - b)$ equivale a $\frac{m}{d} \mid \big(\frac{a}{d}x - \frac{b}{d}\big)$, y además $\frac{a}{d}$ y $\frac{m}{d}$ ya son coprimos.
-
-:::::{admonition} Traza de 6x ≡ 4 (mod 10)
-:class: dropdown
-::::{tab-set}
-:::{tab-item} Paso 1
-```{code-block} text
-:emphasize-lines: 1
-6x ≡ 4 (mod 10)                    d = mcd(6, 10) = 2, y 2 | 4
-```
-
-> Hay solución. **¿Cuántas?**
-
-:::
-:::{tab-item} Paso 2
-```{code-block} text
-:emphasize-lines: 2
-6x ≡ 4 (mod 10)                    d = mcd(6, 10) = 2, y 2 | 4
-3x ≡ 2 (mod 5)                     se divide todo entre 2
-```
-
-> Ahora $\text{mcd}(3, 5) = 1$: aplica el método del inverso.
-
-:::
-:::{tab-item} Paso 3
-```{code-block} text
-:emphasize-lines: 3
-6x ≡ 4 (mod 10)                    d = mcd(6, 10) = 2, y 2 | 4
-3x ≡ 2 (mod 5)                     se divide todo entre 2
-x ≡ 2 · 2 = 4 (mod 5)              el inverso de 3 módulo 5 es 2
-```
-
-:::
-:::{tab-item} Paso 4
-```{code-block} text
-:emphasize-lines: 4
-6x ≡ 4 (mod 10)                    d = mcd(6, 10) = 2, y 2 | 4
-3x ≡ 2 (mod 5)                     se divide todo entre 2
-x ≡ 2 · 2 = 4 (mod 5)              el inverso de 3 módulo 5 es 2
-x ≡ 4 o x ≡ 9 (mod 10)             4 + 5k, con k = 0, 1
-```
-
-> La clase módulo 5 se parte en dos clases módulo 10. Coincide con la tabla.
-
-:::
-::::
-:::::
-
-:::{admonition} Teorema 4
-Sea $d = \text{mcd}(a, m)$. La congruencia $ax \equiv b \pmod{m}$ tiene solución si y solo si $d \mid b$. En ese caso tiene exactamente $d$ soluciones módulo $m$: si $x_0$ es una de ellas, son
-
-$$
-x_0,\quad x_0 + \frac{m}{d},\quad x_0 + 2\frac{m}{d},\quad \ldots,\quad x_0 + (d-1)\frac{m}{d}
-$$
-:::
-
-Con $d = 1$ queda el caso de la sección 5: una sola solución módulo $m$.
-
-### 6.1 Ejemplos
-
-#### Ejemplo 1
-
-Sin resolver, diga cuántas soluciones módulo $m$ tiene cada congruencia.
-
-1. $9x \equiv 12 \pmod{15}$
-2. $9x \equiv 10 \pmod{15}$
-3. $10x \equiv 6 \pmod{14}$
-4. $8x \equiv 5 \pmod{15}$
-
-:::{admonition} Resultado
-:class: dropdown
-| Congruencia | $d$ | ¿$d \mid b$? | Soluciones |
-|---|---|---|---|
-| $9x \equiv 12 \pmod{15}$ | 3 | sí | 3 |
-| $9x \equiv 10 \pmod{15}$ | 3 | no | 0 |
-| $10x \equiv 6 \pmod{14}$ | 2 | sí | 2 |
-| $8x \equiv 5 \pmod{15}$ | 1 | sí | 1 |
-:::
-
-#### Ejemplo 2
-
-Resuelva $9x \equiv 12 \pmod{15}$ y $10x \equiv 6 \pmod{14}$.
-
-:::{admonition} Resultado
-:class: dropdown
-**Primera.** Dividiendo entre 3: $3x \equiv 4 \pmod{5}$. Con $\overline{3} = 2$: $x \equiv 8 \equiv 3 \pmod{5}$. Módulo 15: $x \equiv 3, 8, 13$.
-
-**Segunda.** Dividiendo entre 2: $5x \equiv 3 \pmod{7}$. Con $\overline{5} = 3$: $x \equiv 9 \equiv 2 \pmod{7}$. Módulo 14: $x \equiv 2, 9$.
-
-```scala
-porTanteo(9, 12, 15)   // List(3, 8, 13)
-porTanteo(10, 6, 14)   // List(2, 9)
-```
-:::
-
-## 7. Ejercicio: de la aritmética modular a la congruencia lineal
+## 4. Ejercicio: de la aritmética modular a la congruencia lineal
 
 Con $\mathbf{mod}$ avanzamos: dado un número, calculamos a dónde llega. Con una congruencia lineal retrocedemos: dado a dónde llegó, calculamos de qué número salió. Los tres ejercicios siguientes hacen ese recorrido de ida y vuelta.
 
@@ -738,7 +404,13 @@ $$
 2 + 5x \equiv 6 \pmod{7} \quad\Longleftrightarrow\quad 5x \equiv 4 \pmod{7}
 $$
 
-Con $\overline{5} = 3$: $x \equiv 3 \cdot 4 = 12 \equiv 5 \pmod{7}$. El menor valor positivo es $x = 5$: son 25 días.
+Probamos los residuos de $x$:
+
+| $x$ | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|---|
+| $5x \;\mathbf{mod}\; 7$ | 0 | 5 | 3 | 1 | 6 | **4** | 2 |
+
+El menor valor positivo es $x = 5$: son 25 días.
 
 **Prueba.** Reutilizamos la función de la Sesión 14:
 
@@ -755,7 +427,7 @@ diaDentroDe(2, 5 * 5)   // "domingo"
 
 :::{admonition} Solución
 :class: dropdown
-La congruencia es $14x \equiv 4 \pmod{7}$, o sea $0 \equiv 4 \pmod{7}$, que es falsa para todo $x$. Con el teorema 4: $d = \text{mcd}(14, 7) = 7$ y $7 \nmid 4$. El respaldo cae siempre en miércoles.
+La congruencia es $14x \equiv 4 \pmod{7}$. Como $14 \equiv 0 \pmod{7}$, queda $0 \equiv 4 \pmod{7}$, que es falsa para todo $x$. El respaldo cae siempre en miércoles.
 :::
 
 ### Ejercicio 2: el dígito perdido
@@ -781,7 +453,13 @@ Este es el esquema del ISBN-10. El código `030?406152` perdió el cuarto dígit
 
 La suma de los conocidos es $141 = 11 \cdot 12 + 9$. Entonces $141 \equiv 9 \pmod{11}$.
 
-**Vuelta.** Queda $4x + 9 \equiv 0 \pmod{11}$, es decir, $4x \equiv -9 \equiv 2 \pmod{11}$. Como 11 es primo, 4 tiene inverso: $4 \cdot 3 = 12 \equiv 1$, así que $\overline{4} = 3$. Entonces $x \equiv 3 \cdot 2 = 6 \pmod{11}$. El dígito era **6**.
+**Vuelta.** Queda $4x + 9 \equiv 0 \pmod{11}$, es decir, $4x \equiv -9 \equiv 2 \pmod{11}$. Probamos los dígitos:
+
+| $x$ | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| $4x \;\mathbf{mod}\; 11$ | 0 | 4 | 8 | 1 | 5 | 9 | **2** | 6 | 10 | 3 |
+
+El dígito era **6**.
 
 **Prueba.**
 
@@ -790,8 +468,6 @@ val digitos = List(0, 3, 0, 6, 4, 0, 6, 1, 5, 2)
 
 digitos.zipWithIndex.map { case (d, i) => (i + 1) * d }.sum % 11   // 0
 ```
-
-Como $\text{mcd}(i, 11) = 1$ para toda posición $i$ de 1 a 10, el dígito perdido siempre se puede recuperar, sin importar en qué posición esté.
 :::
 
 ### Ejercicio 3: cifrado afín
@@ -803,8 +479,8 @@ c = (7p + 3) \;\mathbf{mod}\; 26
 $$
 
 1. Cifre la palabra `HOLA`.
-2. Escriba la fórmula para descifrar.
-3. Descifre el mensaje `RDZD`.
+2. Escriba la congruencia lineal que hay que resolver para descifrar una letra.
+3. Descifre el mensaje `RDZD`, probando valores de $p$.
 4. Implemente `cifrar` y `descifrar` en Scala.
 5. Muestre que **no** se puede usar $c = (13p + 3) \;\mathbf{mod}\; 26$ como cifrado.
 
@@ -867,7 +543,7 @@ A      0   3        3    D
 ::::
 :::::
 
-:::::{admonition} Solución de 2: la fórmula para descifrar
+:::::{admonition} Solución de 2: la congruencia para descifrar
 :class: dropdown
 ::::{tab-set}
 :::{tab-item} Paso 1
@@ -886,28 +562,7 @@ c ≡ 7p + 3 (mod 26)
 7p ≡ c - 3 (mod 26)
 ```
 
-> Es una congruencia lineal en $p$. $\text{mcd}(7, 26) = 1$, así que hay solución única.
-
-:::
-:::{tab-item} Paso 3
-```{code-block} text
-:emphasize-lines: 3
-c ≡ 7p + 3 (mod 26)
-7p ≡ c - 3 (mod 26)
-15 · 7p ≡ 15(c - 3) (mod 26)
-```
-
-> Por tanteo con `inverso(7, 26)`: $\overline{7} = 15$, porque $7 \cdot 15 = 105 = 26 \cdot 4 + 1$.
-
-:::
-:::{tab-item} Paso 4
-```{code-block} text
-:emphasize-lines: 4
-c ≡ 7p + 3 (mod 26)
-7p ≡ c - 3 (mod 26)
-15 · 7p ≡ 15(c - 3) (mod 26)
-p ≡ 15(c - 3) (mod 26)
-```
+> Es una congruencia lineal en $p$, con $a = 7$, $b = c - 3$ y $m = 26$.
 
 :::
 ::::
@@ -915,29 +570,31 @@ p ≡ 15(c - 3) (mod 26)
 
 :::{admonition} Solución de 3: descifrar RDZD
 :class: dropdown
-| Letra cifrada | $c$ | $15(c - 3)$ | $p$ | Letra |
-|---|---|---|---|---|
-| R | 17 | 210 | 2 | C |
-| D | 3 | 0 | 0 | A |
-| Z | 25 | 330 | 18 | S |
-| D | 3 | 0 | 0 | A |
+Probamos $p = 0, 1, 2, \ldots$ hasta que $7p \;\mathbf{mod}\; 26$ coincida con $(c - 3) \;\mathbf{mod}\; 26$:
+
+| Letra cifrada | $c$ | $(c - 3) \;\mathbf{mod}\; 26$ | $p$ | Comprobación | Letra |
+|---|---|---|---|---|---|
+| R | 17 | 14 | 2 | $7 \cdot 2 = 14$ | C |
+| D | 3 | 0 | 0 | $7 \cdot 0 = 0$ | A |
+| Z | 25 | 22 | 18 | $7 \cdot 18 = 126 = 26 \cdot 4 + 22$ | S |
+| D | 3 | 0 | 0 | $7 \cdot 0 = 0$ | A |
 
 El mensaje es `CASA`.
 :::
 
 :::{admonition} Solución de 4: implementación
 :class: dropdown
-Un cifrado es un `map` letra por letra. Con currying, la clave queda fija y el resultado es una función, como en la [Sesión 12](../Sesion12-FuncionesAltoOrdenI/index.md):
+Un cifrado es un `map` letra por letra. Con currying, la clave queda fija y el resultado es una función, como en la [Sesión 12](../Sesion12-FuncionesAltoOrdenI/index.md). Para descifrar reutilizamos `porTanteo`:
 
 ```scala
 def aNumeros(s: String): List[Int] = s.toList.map(l => l - 'A')
 def aTexto(xs: List[Int]): String = xs.map(n => ('A' + n).toChar).mkString
 
 def cifrar(a: Int, k: Int)(p: Int): Int = Math.floorMod(a * p + k, 26)
-def descifrar(aInv: Int, k: Int)(c: Int): Int = Math.floorMod(aInv * (c - k), 26)
+def descifrar(a: Int, k: Int)(c: Int): Int = porTanteo(a, c - k, 26).head
 
 val ida    = cifrar(7, 3)
-val vuelta = descifrar(15, 3)
+val vuelta = descifrar(7, 3)
 
 aTexto(aNumeros("HOLA").map(ida))      // "AXCD"
 aTexto(aNumeros("RDZD").map(vuelta))   // "CASA"
@@ -950,20 +607,18 @@ La última línea comprueba las 26 letras: `vuelta` deshace a `ida`.
 
 :::{admonition} Solución de 5: el coeficiente 13 no sirve
 :class: dropdown
-$\text{mcd}(13, 26) = 13$, así que 13 no tiene inverso. Se ve directamente:
+Se ve directamente en la tabla:
 
 | $p$ | 0 | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|---|
 | $13p \;\mathbf{mod}\; 26$ | 0 | 13 | 0 | 13 | 0 |
 
-A, C, E… se cifran con la misma letra, así que al descifrar no se sabe de cuál salió. Por el teorema 4, la congruencia $13p \equiv c - 3 \pmod{26}$ tiene 0 o 13 soluciones, nunca una.
-
-Sirven los coeficientes coprimos con 26:
+A, C, E… se cifran con la misma letra, así que al descifrar no se sabe de cuál salió. Un coeficiente sirve solo si las 26 letras producen 26 valores distintos:
 
 ```scala
-(1 until 26).toList.filter(a => inverso(a, 26).isDefined)
+(1 until 26).toList.filter(a => (0 until 26).map(cifrar(a, 0)).distinct.size == 26)
 // List(1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25)
 ```
 :::
 
-En este ejercicio el 15 salió probando, con `inverso(7, 26)`. Con módulo 26 eso sirve. En la [Sesión 16](../Sesion16-AlgoritmoEuclides/index.md) el mismo inverso sale del algoritmo de Euclides, sin probar nada.
+En este ejercicio, cada letra exigió probar hasta 26 valores. En la [Sesión 16](../Sesion16-AlgoritmoEuclides/index.md) encontraremos una fórmula que descifra sin probar nada.
